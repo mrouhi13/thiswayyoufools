@@ -1,0 +1,7 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@fontName          : 'Ubuntu';
+
+@emSize   : 12px;

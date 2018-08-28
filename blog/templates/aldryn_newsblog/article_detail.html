@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load i18n staticfiles thumbnail cms_tags apphooks_config_tags menu_tags %}
+
+{% block title %}
+    {{ article.title }} - {{ block.super }}
+{% endblock %}
+
+{% block newsblog_content %}
+    <div class="ui inverted vertical masthead center aligned segment m-b-30"
+            {% if article.featured_image_id %}
+         style="background-image: url({% thumbnail article.featured_image 700x394 crop subject_location=article.featured_image.subject_location %}) !important;"
+            {% endif %}>
+        <div class="ui container">
+            <div class="ui large secondary inverted menu">
+                <a class="ui middle aligned rounded image" href="/"><img
+                        src="{% static 'images/favicon/favicon.ico' %}"></a>
+                {% show_menu 0 0 100 100 'aldryn_newsblog/includes/menu.html' %}
+            </div>
+
+            {% if article.categories.exists %}
+                <div class="ui sub yellow header m-t-50">
+                    {{ article.categories.first.name }}
+                </div>
+            {% endif %}
+
+            <h1 class="ui inverted header">
+                {{ article.title }}
+            </h1>
+        </div>
+        {% include 'aldryn_newsblog/includes/author.html' with author=article.author %}
+    </div>
+    <div class="ui text container">
+        {% if article.lead_in %}
+            <p>{% render_model article 'lead_in' %}</p>
+        {% endif %}
+
+        {% static_placeholder 'newsblog_social' %}
+
+        {% if article.tags %}
+            {% for tag in article.tags.all %}
+                <a href="{% namespace_url 'article-list-by-tag' tag=tag.slug namespace=namespace default='' %}"
+                   class="ui label">{{ tag.name }}</a>
+            {% endfor %}
+        {% endif %}
+
+        <div class="ui section divider"></div>
+    </div>
+{% endblock %}

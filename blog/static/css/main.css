@@ -1,0 +1,126 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Shabnam';
+    src: url('../fonts/shabnam/Shabnam.eot ');
+    src: url('../fonts/shabnam/Shabnam.eot?#iefix ') format('embedded-opentype'), url('../fonts/shabnam/Shabnam.woff2') format('woff2'), url('../fonts/shabnam/Shabnam.woff') format('woff'), url('../fonts/shabnam/Shabnam.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Shabnam-Light';
+    src: url('../fonts/shabnam/Shabnam-Light.eot ');
+    src: url('../fonts/shabnam/Shabnam-Light.eot?#iefix ') format('embedded-opentype'), url('../fonts/shabnam/Shabnam-Light.woff2') format('woff2'), url('../fonts/shabnam/Shabnam-Light.woff') format('woff'), url('../fonts/shabnam/Shabnam-Light.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Shabnam-Bold';
+    src: url('../fonts/shabnam/Shabnam-Bold.eot ');
+    src: url('../fonts/shabnam/Shabnam-Bold.eot?#iefix ') format('embedded-opentype'), url('../fonts/shabnam/Shabnam-Bold.woff2') format('woff2'), url('../fonts/shabnam/Shabnam-Bold.woff') format('woff'), url('../fonts/shabnam/Shabnam-Bold.ttf') format('truetype')
+}
+
+.hidden.menu {
+    display: none;
+}
+
+.masthead.segment {
+    min-height: 400px;
+    padding: 1em 0;
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+}
+
+.masthead .logo.item img {
+    margin-right: 1em;
+}
+
+.masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+    margin-top: 1em;
+    margin-bottom: 0;
+    font-size: 4em;
+    font-weight: normal;
+}
+
+.masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+.ui.vertical.stripe {
+    padding: 5em 0;
+}
+
+.ui.vertical.stripe h3 {
+    font-size: 2em;
+}
+
+.ui.vertical.stripe .button + h3,
+.ui.vertical.stripe p + h3 {
+    margin-top: 3em;
+}
+
+.ui.vertical.stripe .floated.image {
+    clear: both;
+}
+
+.ui.vertical.stripe p {
+    font-size: 1.33em;
+}
+
+.ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0;
+}
+
+.quote.stripe.segment {
+    padding: 0;
+}
+
+.quote.stripe.segment .grid .column {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.footer.segment {
+    padding: 5em 0;
+}
+
+.secondary.inverted.menu .toc.item {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .ui[class*="very padded"].segment {
+        padding: 1em !important;
+    }
+
+    .ui.fixed.menu {
+        display: none !important;
+    }
+
+    .secondary.inverted.menu .item,
+    .secondary.inverted.menu .menu {
+        display: none;
+    }
+
+    .secondary.menu .toc.item {
+        display: block;
+    }
+
+    .masthead.segment {
+        min-height: 350px;
+    }
+
+    .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+    }
+
+    .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+    }
+}

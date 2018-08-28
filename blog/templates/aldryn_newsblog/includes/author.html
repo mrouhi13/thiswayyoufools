@@ -1,0 +1,31 @@
+{% load i18n staticfiles thumbnail apphooks_config_tags article_utils %}
+
+{% if author %}
+    <div class="ui horizontal list">
+        <div class="item m-t-10 m-l-10 m-r-10">
+            {% if author.visual %}
+                {% thumbnail author.visual '50x50' crop upscale subject_location=author.visual.subject_location as author_image %}
+                <img class="ui mini circular image" src="{{ author_image.url }}" width="50" height="50"
+                     alt="{{ author.name }}">
+            {% endif %}
+            <div class="content text-left">
+                <div class="ui sub yellow header text-left">Written by</div>
+                {{ author.name }}
+            </div>
+        </div>
+        <div class="item m-t-10 m-l-10 m-r-10">
+            <i class="calendar alternate outline large icon"></i>
+            <div class="content text-left">
+                <div class="ui sub yellow header text-left">Posted on</div>
+                {{ article.publishing_date|date:'F d, Y' }}
+            </div>
+        </div>
+        <div class="item m-t-10 m-l-10 m-r-10">
+            <i class="clock outline large icon"></i>
+            <div class="content text-left">
+                <div class="ui sub yellow header text-left">Read time</div>
+                {{ article.lead_in|get_read_time }}
+            </div>
+        </div>
+    </div>
+{% endif %}

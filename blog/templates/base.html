@@ -9,24 +9,24 @@
     <meta name="keywords" content="Django,Python,blogging">
     <meta name="author" content="Majid Rouhi, mrouhi13@gmail.com">
     <meta name="robots" content="index, nofollow">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
-    <link rel="mask-icon" href="{% static 'images/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
-    <link rel="shortcut icon" href="{% static 'images/favicon/favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'blog/images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'blog/images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'blog/images/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'blog/images/favicon/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'blog/images/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <link rel="shortcut icon" href="{% static 'blog/images/favicon/favicon.ico' %}">
     <meta name="apple-mobile-web-app-title" content="Mython">
     <meta name="application-name" content="Mython">
     <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="{% static 'images/favicon/browserconfig.xml' %}">
+    <meta name="msapplication-config" content="{% static 'blog/images/favicon/browserconfig.xml' %}">
     <meta name="theme-color" content="#0d456f">
     <title>{% block title %}
         {% page_attribute 'page_title' %}
     {% endblock title %}</title>
     <link rel="canonical" href="http://mython.ir/">
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/semantic-ui/dist/semantic.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/vendor/semantic-ui/dist/semantic.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/util.css' %}">
     {% render_block 'css' %}
 </head>
 <body class="pushable">
@@ -40,7 +40,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-<script src="{% static 'vendor/semantic-ui/dist/semantic.min.js' %}"></script>
+<script src="{% static 'blog/vendor/semantic-ui/dist/semantic.min.js' %}"></script>
 {% render_block 'js' %}
 </body>
 </html>

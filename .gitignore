@@ -193,7 +193,10 @@ modules.xml
 .Python
 build/
 develop-eggs/
-dist/
+src/
+tasks/
+gulpfile.js
+vendor/*.json
 downloads/
 eggs/
 .eggs/

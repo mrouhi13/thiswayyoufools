@@ -196,7 +196,7 @@ develop-eggs/
 src/
 tasks/
 gulpfile.js
-vendor/*.json
+*.json
 downloads/
 eggs/
 .eggs/

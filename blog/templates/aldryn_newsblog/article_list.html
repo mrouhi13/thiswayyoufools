@@ -6,16 +6,16 @@
          style="background-image: url('{% static '/blog/images/home-header.jpg' %}') !important;">
         <div class="ui container">
             <div class="ui large secondary inverted menu">
-                <a class="ui middle aligned rounded image" href="/"><img
-                        src="{% static 'blog/images/favicon/favicon.ico' %}"></a>
+                {% static_placeholder 'menu_logo' %}
                 {% show_menu 0 0 100 100 'aldryn_newsblog/includes/menu.html' %}
             </div>
             <h1 class="ui inverted header">
                 {% page_attribute 'page_title' %}
             </h1>
-            <h2>The cake is a lie.</h2>
+            <h2>{% static_placeholder 'home_slogan' %}</h2>
         </div>
     </div>
+
     <div class='ui vertical stripe segment'>
         <div class="ui grid centered m-b-20">
             <div class="ui horizontal bulleted list grey">

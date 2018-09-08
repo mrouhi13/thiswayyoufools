@@ -2,7 +2,7 @@
 {% load i18n staticfiles thumbnail cms_tags apphooks_config_tags menu_tags %}
 
 {% block title %}
-    {{ article.title }} - {{ block.super }}
+    {{ article.title }} | {{ block.super }}
 {% endblock %}
 
 {% block newsblog_content %}
@@ -12,8 +12,7 @@
             {% endif %}>
         <div class="ui container">
             <div class="ui large secondary inverted menu">
-                <a class="ui middle aligned rounded image" href="/"><img
-                        src="{% static 'blog/images/favicon/favicon.ico' %}"></a>
+                {% static_placeholder 'menu_logo' %}
                 {% show_menu 0 0 100 100 'aldryn_newsblog/includes/menu.html' %}
             </div>
 

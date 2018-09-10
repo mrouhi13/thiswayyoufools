@@ -6,8 +6,13 @@
          style="background-image: url('{% static '/blog/images/home-header.jpg' %}') !important;">
         <div class="ui container">
             <div class="ui large secondary inverted menu">
-                {% static_placeholder 'menu_logo' %}
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
                 {% show_menu 0 0 100 100 'aldryn_newsblog/includes/menu.html' %}
+                <div class="right item">
+                    {% static_placeholder 'menu_logo' %}
+                </div>
             </div>
             <h1 class="ui inverted header">
                 {% page_attribute 'page_title' %}

@@ -1,4 +1,5 @@
-{% load staticfiles i18n cms_tags sekizai_tags %}
+{% load staticfiles i18n cms_tags sekizai_tags menu_tags %}
+
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
@@ -13,34 +14,36 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'blog/images/favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'blog/images/favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'blog/images/favicon/site.webmanifest' %}">
-    <link rel="mask-icon" href="{% static 'blog/images/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <link rel="mask-icon" href="{% static 'blog/images/favicon/safari-pinned-tab.svg' %}" color="#2185d0">
     <link rel="shortcut icon" href="{% static 'blog/images/favicon/favicon.ico' %}">
     <meta name="apple-mobile-web-app-title" content="Mython">
     <meta name="application-name" content="Mython">
-    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="msapplication-config" content="{% static 'blog/images/favicon/browserconfig.xml' %}">
-    <meta name="theme-color" content="#0d456f">
+    <meta name="theme-color" content="#2185d0">
     <title>{% block title %}
         {% page_attribute 'page_title' %}
     {% endblock title %}</title>
-    <link rel="canonical" href="http://mython.ir/">
+    <link rel="canonical" href="/">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/vendor/semantic-ui/dist/semantic.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/util.css' %}">
     {% render_block 'css' %}
 </head>
 <body class="pushable">
 {% cms_toolbar %}
+<div class="ui vertical inverted sidebar menu">
+    {% show_menu 0 0 100 100 'aldryn_newsblog/includes/menu.html' %}
+</div>
 <div class="pusher">
-    {% block content %}
-        {% block newsblog_content %}{% endblock %}
-    {% endblock content %}
+    {% block newsblog_content %}{% endblock %}
     {% include 'aldryn_newsblog/includes/footer.html' %}
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+<script src="{% static 'blog/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'blog/vendor/semantic-ui/dist/semantic.min.js' %}"></script>
+<script>
+    $(document).ready(function(){$('.ui.sidebar').sidebar('attach events','.toc.item')});
+</script>
 {% render_block 'js' %}
 </body>
 </html>

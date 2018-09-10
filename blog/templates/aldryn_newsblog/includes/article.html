@@ -14,14 +14,13 @@
         <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">{% render_model article 'title' %}</a>
     </h1>
 
-
     <div class="ui grid centered m-b-20">
         <div class="ui horizontal list">
             <div class="item m-t-10 m-l-10 m-r-10">
                 <i class="user outline icon"></i>
                 <div class="content">
-                    <a class="ui image label bgtrans"
-                       href="{% namespace_url 'article-list-by-author' article.author.slug namespace=namespace default='' %}">
+                    <a style="color: rgba(0, 0, 0, 0.87);"
+                            href="{% namespace_url 'article-list-by-author' article.author.slug namespace=namespace default='' %}">
                         {{ article.author }}
                     </a>
                 </div>

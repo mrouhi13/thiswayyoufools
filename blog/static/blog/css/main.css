@@ -77,13 +77,9 @@
         padding: 1em !important;
     }
 
-    .ui.fixed.menu {
-        display: none !important;
-    }
-
     .secondary.inverted.menu .item,
     .secondary.inverted.menu .menu {
-        display: none !important;;
+        display: none;
     }
 
     .secondary.menu .toc.item {

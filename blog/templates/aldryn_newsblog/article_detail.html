@@ -12,8 +12,13 @@
             {% endif %}>
         <div class="ui container">
             <div class="ui large secondary inverted menu">
-                {% static_placeholder 'menu_logo' %}
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
                 {% show_menu 0 0 100 100 'aldryn_newsblog/includes/menu.html' %}
+                <div class="right item">
+                    {% static_placeholder 'menu_logo' %}
+                </div>
             </div>
 
             {% if article.categories.exists %}
@@ -25,8 +30,8 @@
             <h1 class="ui inverted header">
                 {{ article.title }}
             </h1>
+            {% include 'aldryn_newsblog/includes/author.html' with author=article.author %}
         </div>
-        {% include 'aldryn_newsblog/includes/author.html' with author=article.author %}
     </div>
     <div class="ui text container">
         {% if article.lead_in %}

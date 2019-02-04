@@ -42,15 +42,15 @@
 
     {% if article.featured_image_id %}
         <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"
-           class="ui fluid rounded centered image">
+           class="ui fluid rounded centered image m-b-20">
             <img src="{% thumbnail article.featured_image 700x394 crop subject_location=article.featured_image.subject_location %}"
                  alt="{{ article.featured_image.alt }}" title="{{ article.featured_image.title }}">
         </a>
     {% endif %}
 
-    {% if article.lead_in %}
-        <p>{% render_model article 'lead_in' '' '' 'truncatewords:"40"' %}</p>
-    {% endif %}
+{#    {% if article.lead_in %}#}
+{#        <p>{% render_model article 'lead_in' '' '' 'truncatewords:"40"' %}</p>#}
+{#    {% endif %}#}
 
     {% if article.tags %}
         <div class="ui four column grid stackable">
@@ -64,7 +64,7 @@
                 <div class="column">
                     <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}"
                        class="ui large right floated primary button">
-                        Read More...</a>
+                        Let's Go...</a>
                 </div>
             </div>
         </div>

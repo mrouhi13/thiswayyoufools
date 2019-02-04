@@ -8,7 +8,7 @@
 {% block newsblog_content %}
     <div class="ui inverted vertical masthead center aligned segment m-b-30"
             {% if article.featured_image_id %}
-         style="background-image: url({% thumbnail article.featured_image 700x394 crop subject_location=article.featured_image.subject_location %}) !important;"
+         style="background-image: url({% thumbnail article.featured_image 700x394 crop subject_location=article.featured_image.subject_location %}) !important;background-position: center"
             {% endif %}>
         <div class="ui container">
             <div class="ui large secondary inverted menu">

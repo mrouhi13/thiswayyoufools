@@ -1,6 +1,6 @@
 {
-    "name": "Mython",
-    "short_name": "Mython",
+    "name": "Thiswayyoufools",
+    "short_name": "Thiswayyoufools",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
@@ -15,6 +15,6 @@
     ],
     "theme_color": "#0d456f",
     "background_color": "#0d456f",
-    "start_url": "https://mython.ir",
+    "start_url": "https://www.thiswayyoufools.com",
     "display": "standalone"
 }

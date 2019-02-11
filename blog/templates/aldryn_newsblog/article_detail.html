@@ -43,7 +43,7 @@
         {% if article.tags %}
             {% for tag in article.tags.all %}
                 <a href="{% namespace_url 'article-list-by-tag' tag=tag.slug namespace=namespace default='' %}"
-                   class="ui label">{{ tag.name }}</a>
+                   class="ui label m-b-5">{{ tag.name }}</a>
             {% endfor %}
         {% endif %}
 

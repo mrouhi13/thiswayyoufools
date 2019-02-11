@@ -56,9 +56,9 @@
         <div class="ui four column grid stackable">
             <div class="two column row">
                 <div class="column middle aligned">
-                    {% for tag in article.tags.all %}
+                    {% for tag in article.tags.all|slice:"4" %}
                         <a href="{% namespace_url 'article-list-by-tag' tag=tag.slug namespace=namespace default='' %}"
-                           class="ui label">{{ tag.name }}</a>
+                           class="ui label m-b-5">{{ tag.name }}</a>
                     {% endfor %}
                 </div>
                 <div class="column">

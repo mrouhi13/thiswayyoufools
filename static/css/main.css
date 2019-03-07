@@ -1,0 +1,147 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h2 a {
+    color: #222;
+}
+
+h2 a:hover {
+    color: rgba(0, 0, 0, .4);
+}
+
+.masthead {
+    padding: 1em 0;
+}
+
+.masthead h1.ui.header {
+    margin-top: 1em;
+    font-size: 3em;
+    font-weight: 200;
+}
+
+.masthead p {
+    padding-top: 2.5em;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-style: normal;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.ui.grid {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.ui.horizontal.link.list a.item {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer {
+    margin-top: 4em;
+    margin-bottom: 1em;
+}
+
+.container-width {
+    display: inline-block !important;
+}
+
+.full-width {
+    display: none !important;
+}
+
+.ui.menu .fixed.item {
+    display: none;
+}
+
+.ui.menu.fixed.mobile {
+    display: none !important;
+}
+
+.ui.menu.fixed {
+    height: 5em;
+}
+
+.ui.text.menu .header.item {
+    text-transform: none;
+    font-weight: 200;
+    font-size: 1.8em;
+}
+
+.ui.menu a.item {
+    color: rgba(0, 0, 0, .4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sidebar.icon, .close.icon {
+    color: #929292;
+    font-size: .75em !important;
+    padding-top: 0.2em !important;
+}
+
+.item.right a {
+    color: #767676 !important;
+    margin: 0 0.3em;
+}
+
+.closed {
+    display: none;
+}
+
+.ui.image.avatar {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    display: block;
+    transition: all .4s ease-in-out;
+}
+
+.ui.image.avatar:hover {
+    -webkit-filter: none;
+    filter: none;
+}
+
+.page-header {
+    margin-bottom: 6em;
+    margin-top: 8em;
+}
+
+.post-body {
+    margin-bottom: 6em;
+}
+
+@media only screen and (max-width: 700px) {
+    .masthead h1.ui.header {
+        font-size: 2.1em;
+        margin-top: 1.5em;
+    }
+
+    .ui.menu.fixed.desktop {
+        display: none !important;
+    }
+
+    .ui.menu.fixed.mobile {
+        display: flex !important;
+        background: #fff !important;
+    }
+
+    .ui.text.menu .header.item {
+        text-transform: none;
+        font-weight: 200;
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container-width {
+        display: none !important;
+    }
+
+    .full-width {
+        display: inline-block !important;
+    }
+}

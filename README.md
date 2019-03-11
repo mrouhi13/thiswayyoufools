@@ -7,9 +7,3 @@ This is my personal blog where I try to share my experiences with Python, Django
 
 * Semantic UI
 * jQuery
-
-# License
-Thiswayyoufools is free and open source. Source code of Thiswayyoufools is licensed under a [GPL v3.0 license][1] and content on this blog licensed under a [Creative Commons Attribution 4.0 International license][2].
-
-[1]: https://www.gnu.org/licenses/gpl-3.0.en.html
-[2]: https://creativecommons.org/licenses/by/4.0/

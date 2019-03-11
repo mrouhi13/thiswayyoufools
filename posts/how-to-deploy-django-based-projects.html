@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- Standard Meta -->
+    <meta charset=UTF-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name=description
+          content="In this post, I show how to deploy a Django project to a server using tools like Gunicorn, Supervisor, Virtualenv and etc.">
+    <meta name=keywords content="Django,Python,Gunicorn,Supervisor,Virtualenv,Ubuntu,Pip,Postgres,Nginx,server,deploy">
+    <meta name=robots content="index, nofollow">
+
+    <!-- Site Properties -->
+    <title>Blog | This way, You fools!</title>
+    <link rel=canonical href="https://www.thiswayyoufools.com">
+    <link rel=stylesheet type="text/css" href="../static/css/default.min.css">
+
+    <!-- Favicons -->
+    <link rel=apple-touch-icon sizes=180x180 href="../static/images/favicons/apple-touch-icon.png">
+    <link rel=icon type="image/png" sizes=2x32 href="../static/images/favicons/favicon-32x32.png">
+    <link rel=icon type="image/png" sizes=16x16 href="../static/images/favicons/favicon-16x16.png">
+    <link rel=manifest href="../static/images/favicons/site.webmanifest">
+    <link rel=mask-icon href="../static/images/favicons/safari-pinned-tab.svg" color=#000000>
+    <link rel="shortcut icon" href="../static/images/favicons/favicon.ico">
+    <meta name=apple-mobile-web-app-title content=TWYF>
+    <meta name=application-name content=TWYF>
+    <meta name=msapplication-TileColor content=#000000>
+    <meta name=msapplication-TileImage content="static/images/favicons/mstile-144x144.png">
+    <meta name=msapplication-config content="static/images/favicons/browserconfig.xml">
+    <meta name=theme-color content=#000000>
+
+    <!-- Opengraph Meta -->
+    <meta property="og:title" content="Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.thiswayyoufools.com">
+    <meta property="og:image" content="https://www.thiswayyoufools.com/static/images/Thiswayyoufools-Home.png">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="This way, You fools!">
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="app">
+    <meta name="twitter:title" property="twitter:title" content="This way, You fools!">
+    <meta name="twitter:site" content="@mrouhi13">
+    <meta name="twitter:creator" content="@mrouhi13">
+    <meta name="twitter:image" property="twitter:image"
+          content="https://www.thiswayyoufools.com/static/images/Thiswayyoufools-Home.png">
+    <meta name="twitter:description" property="twitter:description" content="">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126660701-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-126660701-3');
+    </script>
+</head>
+<body>
+<!-- Desktop fixed menu -->
+<div id="post-menu" class="ui top fixed text menu desktop" style="background:#fff">
+    <div class="ui container">
+        <div class="item header">This way, You fools!</div>
+        <a class="item active" href="../index.html" title="Blog">Blog</a>
+        <a class="item" href="../about.html" title="About">About</a>
+        <a class="item" href="../projects.html" title="Projects">Projects</a>
+        <div class="item right">
+            <a href="https://twitter.com/mrouhi13" title="Twitter">
+                <i class="twitter link large grey icon"></i>
+            </a>
+            <a href="https://github.com/mrouhi13" title="Github">
+                <i class="github link large grey icon"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Mobile fixed menu -->
+<div class="ui top fixed text menu mobile">
+    <div class="ui container">
+        <div class="item header">
+            <i class="sidebar icon"></i>
+            <div class="content">This way, You fools!</div>
+        </div>
+        <div class="closed">
+            <a class="item active" href="../index.html" title="Blog">Blog</a>
+            <a class="item" href="../about.html" title="About">About</a>
+            <a class="item" href="../projects.html" title="Projects">Projects</a>
+        </div>
+        <div class="item right">
+            <a href="https://twitter.com/mrouhi13" title="Twitter">
+                <i class="twitter link large grey icon"></i>
+            </a>
+            <a href="https://github.com/mrouhi13" title="Github">
+                <i class="github link large grey icon"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Header -->
+<div class="ui container masthead center aligned overlay">
+    <div class="page-header">
+        <h1 id="title" class="ui header">How to deploy Django based projects?</h1>
+        <div id="menu" class="ui horizontal link list">
+            <div class="item">
+                <i class="calendar alternate outline icon" style="margin-right:.2em"></i>February 02, 2019
+            </div>
+            <div class="item">
+                <i class="clock outline icon" style="margin-right:.2em"></i>5 Minutes
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content -->
+<div class="ui image full-width">
+    <a href="https://unsplash.com/photos/ogJNR_jhxS8" class="ui medium right corner label" target=_blank
+       title="Photo Source">
+        <i class="linkify icon"></i>
+    </a>
+    <img src="../static/images/posts/charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
+         title="How to deploy Django based projects?">
+</div>
+<div class="ui text container masthead">
+    <div class="ui image container-width">
+        <a href="https://unsplash.com/photos/ogJNR_jhxS8" class="ui medium right corner label" target=_blank
+           title="Photo Source">
+            <i class="linkify icon"></i>
+        </a>
+        <img src="../static/images/posts/charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
+             title="How to deploy Django based projects?">
+    </div>
+    <div class="post-body">
+        <h2 class="ui header">Introduction</h2>
+        <p>The world is very wide. Science, too. It's interesting to know that programming is also widespread. Python as
+            a programming language has many orientations. For web development with Python, at this moment where I
+            prepared this post, Django is a great and powerful web framework for this purpose. Let's see how to deploy a
+            Django based project on the server...</p>
+        <div class="ui section divider"></div>
+        <p>For running Django projects on a production/test server we have many tools with different combinations in
+            hand. We use this stack that listed below:</p>
+        <div class="ui bulleted list">
+            <div class="item">Ubuntu 18.04</div>
+            <div class="item">Python 3.6</div>
+            <div class="item">Django 2.1.5</div>
+            <div class="item">Nginx 1.14</div>
+            <div class="item">Postgres 10.6</div>
+            <div class="item">Pip 19.0.2</div>
+            <div class="item">Virtualenv 15.1.0</div>
+            <div class="item">Supervisor 3.3.1</div>
+            <div class="item">Gunicorn 19.9.0</div>
+        </div>
+        <h2 class="ui header">Step 1 - Preparing Environment:</h2>
+        <p>At the beginning we need to prepare our deployment environment, so we should update our OS and install the
+            required packages.</p>
+        <p>1- First of all we need to create a new user for our project (I used my project name as username, you can use
+            anything else):</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">adduser eggplant</li>
+        </ul></code></pre>
+        <pre><div class="secondary-code-label">Output</div><code>Adding user `eggplant' ...
+Adding new group `eggplant' (1002) ...
+Adding new user `eggplant' (1002) with group `eggplant' ...
+Creating home directory `/home/eggplant' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Changing the user information for eggplant_user
+Enter the new value, or press ENTER for the default
+Full Name []:
+Room Number []:
+Work Phone []:
+Home Phone []:
+Other []:
+Is the information correct? [Y/n] y</code></pre>
+        <p>2- Next, add the user to the <strong>sudoers</strong> group:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">adduser eggplant sudo</li>
+        </ul></code></pre>
+        <pre><div class="secondary-code-label">Output</div><code>Adding user `eggplant' to group `sudo' ...
+Adding user eggplant to group sudo
+Done.</code></pre>
+        <p>3- Switch to new user shell:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">su - eggplant</li>
+        </ul></code></pre>
+        <p>4- Now, we need upgrade our Ubuntu packages:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo apt update</li>
+           <li class="line">sudo apt upgrade</li>
+        </ul></code></pre>
+        <p>5- Next, to running our project we need to install some packages:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo apt install nginx postgresql python3-pip virtualenv supervisor</li>
+        </ul></code></pre>
+        <h2>Step 2 - Preparing PostgreSQL:</h2>
+        <p>In this step, we create a user and database for our project.</p>
+        <p>1- Switch to postgres shell:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo -iu postgres</li>
+        </ul></code></pre>
+        <p>2- Create a user for our database:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">createuser eggplant_user --pwprompt</li>
+        </ul></code></pre>
+        <p>3- Create a database for our project:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">createdb --owner eggplant_user eggplant</li>
+        </ul></code></pre>
+        <p>4- Exit from postgres shell:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">exit</li>
+        </ul></code></pre>
+        <h2>Step 3 - Clone and Setup Project:</h2>
+        <p>Retrieve project files from the source control and then set up the environment.</p>
+        <p>1- Clone project (In this case I used Github):</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">git clone https://github.com/mrouhi13/eggplant.git</li>
+        </ul></code></pre>
+        <p>2- Create settings file from sample:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">cd eggplant</li>
+            <li class="line">cp eggplant/settings.py.sample eggplant/settings.py</li>
+        </ul></code></pre>
+        <p>3- Update <em>settings.py</em> file:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">nano eggplant/settings.py</li>
+        </ul></code></pre>
+        <p>and fill <code>SECRET_KEY</code> value. you can use <a
+                href="https://djecrety.ir"><strong>Djecrety</strong></a> to generate <code>SECRET_KEY</code> for
+            your project and then update database section with created user and database.</p>
+        <div class="ui visible info small message">
+            <div class="header">
+                Note
+            </div>
+            <p>In the settings.py file, by default <code>DEBUG = False</code>, this means you must set your server
+                IP or domain (if exist) in <code>ALLOWED_HOST</code>. You can set <code>DEBUG = True</code> if
+                testing on localhost.</p>
+        </div>
+        <div class="code-label">eggplants/settings.py</div>
+        <pre><code>
+SECRET_KEY = '&lt;secret_key_generated_by_djecrety&gt;'
+
+. . .
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'eggplant',
+        'USER': 'eggplant_user',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}</code></pre>
+        <p>4- Create python3 virtualenv and activate it:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">virtualenv .env --python=python3</li>
+            <li class="line">source .env/bin/activate</li>
+        </ul></code></pre>
+        <p>At this point our project directory like this:</p>
+        <pre><div class="secondary-code-label">Output</div><code>eggplant/
+|--- eggplant/
+|------ __init__.py
+|------ settings.py
+|------ settings.py.sample
+|------ usrls.py
+|------ wsgi.py
+|--- .env/
+|--- .git/
+|--- LICENSE
+|--- manage.py
+|--- README.md
+|--- requirements.txt
+|--- .gitignore</code></pre>
+        <p>5- Install the Django package and other dependencies package from <em>requirement.txt</em>:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">pip install -r requirements.txt</li>
+        </ul></code></pre>
+        <p>6- Migrate models to the database and collect static files:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">./manage.py migrate</li>
+            <li class="line">./manage.py collectstatic</li>
+        </ul></code></pre>
+        <p>7- At last, run server for testing everything is okay: </p>
+        <pre><code><ul class="prefixed">
+            <li class="line">./manage.py runserver</li>
+        </ul></code></pre>
+        <pre><div class="secondary-code-label">Output</div><code>Performing system checks...
+System check identified no issues (0 silenced).
+February 02, 2019 - 13:26:69
+Django version 2.1.5, using settings 'eggplant.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.</code></pre>
+        <p>Hit <em>Ctrl + c</em> to exit.</p>
+        <h2>Step 4 - Preparing Gunicorn:</h2>
+        <p>In this step, we must connect gunicorn to project using <em>wsgi.py</em>.</p>
+        <div class="ui visible info small message">
+            <div class="header">Note</div>
+            <p>Gunicorn package installed with <em>requirements.txt</em>.</p>
+        </div>
+        <p>1- Create <em>gunicorn_start</em> file and add configuration:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">nano .env/bin/gunicorn_start</li>
+        </ul></code></pre>
+        <div class="code-label">.env/bin/gunicorn_start</div>
+        <pre><code>
+#!/bin/bash
+NAME="eggplant"
+DIR=/home/eggplant/eggplant
+USER=eggplant
+GROUP=eggplant
+WORKERS=3
+BIND=unix:/home/eggplant/eggplant/.env/run/gunicorn.sock
+DJANGO_SETTINGS_MODULE=eggplant.settings
+DJANGO_WSGI_MODULE=eggplant.wsgi
+LOG_LEVEL=error
+
+cd $DIR
+source .env/bin/activate
+
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+export PYTHONPATH=$DIR:$PYTHONPATH
+
+exec .env/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+--name $NAME \
+--workers $WORKERS \
+--user=$USER \
+--group=$GROUP \
+--bind=$BIND \
+--log-level=$LOG_LEVEL \
+--log-file=-</code></pre>
+        <p>Hit <em>Ctrl + x</em> and save file.</p>
+        <p>2- Add execute permission to <em>gunicorn_start:</em></p>
+        <pre><code><ul class="prefixed">
+            <li class="line">chmod u+x .env/bin/gunicorn_start</li>
+        </ul></code></pre>
+        <p>3- Make <em>run</em> directory for Unix socket file:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">mkdir .env/run</li>
+        </ul></code></pre>
+        <p>4- Make <em>logs</em> directory and gunicorn log file: </p>
+        <pre><code><ul class="prefixed">
+            <li class="line">mkdir .env/logs</li>
+            <li class="line">touch .env/logs/gunicorn-error.log</li>
+        </ul></code></pre>
+        <h2>Step 5 - Preparing Supervisor:</h2>
+        <p>We use the supervisor to ensure our project always is running.</p>
+        <p>1- First start and enable <em>supervisor</em> service:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo systemctl enable supervisor</li>
+            <li class="line">sudo systemctl start supervisor</li>
+        </ul></code></pre>
+        <p>2- Create <em>eggplant.conf</em> config file for our project:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo nano /etc/supervisor/conf.d/eggplant.conf</li>
+        </ul></code></pre>
+        <div class="code-label">/etc/supervisor/conf.d/eggplant.conf</div>
+        <pre><code>
+[program:eggplant]
+command=/home/eggplant/eggplant/.env/bin/gunicorn_start
+user= eggplant
+autostart=true
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/home/eggplant/eggplant/.env/logs/gunicorn-error.log</code></pre>
+        <p>Hit <em>Ctrl + x</em> and save file.</p>
+        <p>3- Update supervisor service to read the new configuration file:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo supervisorctl reread</li>
+            <li class="line">sudo supervisorctl update</li>
+        </ul></code></pre>
+        <p>4- Check our project status:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo supervisorctl status eggplant</li>
+        </ul></code></pre>
+        <pre><div
+                class="secondary-code-label">Output</div><code>eggplant RUNNING pid 30668, uptime 00:00:69</code></pre>
+        <h2>Step 6 - Preparing Nginx:</h2>
+        <p>Now we config webserver to publish our project to the internet.</p>
+        <p>1- First remove default config symlink and then enable and start nginx service:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo rm /etc/nginx/sites-enabled/default</li>
+            <li class="line">sudo systemctl start nginx</li>
+            <li class="line">sudo systemctl enable nginx</li>
+        </ul></code></pre>
+        <p>2- Create a configuration file for our project and add the config to it:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo nano /etc/nginx/sites-available/eggplant</li>
+        </ul></code></pre>
+        <div class="code-label">/etc/nginx/sites-available/eggplant</div>
+        <pre><code>
+upstream eggplant_server {
+    server unix:/home/eggplant/eggplant/.env/run/gunicorn.sock fail_timeout=0;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name www.example.com;
+
+    access_log /home/eggplant/eggplant/.env/logs/nginx-access.log;
+    error_log /home/eggplant/eggplant/.env/logs/nginx-error.log;
+
+    location /static/ {
+        alias /home/eggplant/eggplant/static/;
+    }
+
+    location /media/ {
+        alias /home/eggplant/eggplant/media/;
+    }
+
+    location / {
+        try_files $uri @proxy_to_app;
+    }
+
+    location @proxy_to_app {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_pass http://eggplant_server;
+    }
+}</code></pre>
+        <p>Hit <em>Ctrl + x</em> and save file.</p>
+        <p>3- Create symlink for configuration file:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo ln -s /etc/nginx/sites-available/eggplant /etc/nginx/sites-enabled/eggplant</li>
+        </ul></code></pre>
+        <p>4- Restart nginx service:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo systemctl restart nginx</li>
+        </ul></code></pre>
+        <h2>Finally:</h2>
+        <p>We reboot the server to check everything is okay and all configuration correctly work:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo reboot</li>
+        </ul></code></pre>
+        <p>After all these things, check your domain (or IP or localhost if your on a test environment) and you must see
+            something like this:</p>
+        <p><img src="../static/images/posts/01-final-result.png" alt="Final Result" title="Final Result" width="700"
+                height="330"></p>
+        <h2>How to update our project?</h2>
+        <p>For updating our project files using git, we need to take a few steps:</p>
+        <p>1- First, go to the project directory and activate virtualenv:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">cd eggplant</li>
+            <li class="line">source .env/bin/activate</li>
+        </ul></code></pre>
+        <p>2- Next, pull new changes from the repository:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">git pull origin master</li>
+        </ul></code></pre>
+        <p>3- And then, do migration and collect static files updates:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">./manage.py migrate</li>
+            <li class="line">./manage.py collectstatic</li>
+        </ul></code></pre>
+        <p>4- In the end restart project and exit:</p>
+        <pre><code><ul class="prefixed">
+            <li class="line">sudo supervisorctl restart eggplant</li>
+            <li class="line">exit</li>
+        </ul></code></pre>
+        <h2>Conclusion:</h2>
+        <p>I tried to show a basic tutorial on this post. Of course, most of the steps have more details and as a developer, you should look for hardening, security, performance, SSL certification and etc. This post is very simplified and general to useable for everyone. you can search about the tools we used in
+            this post and find the best solution for your project. I suggest some link below to start:</p>
+        <p><a href="http://docs.gunicorn.org/en/stable/configure.html">Gunicorn official documentation</a></p>
+        <p><a href="http://supervisord.org/running.html">Supervisor official documentation</a></p>
+        <p><a href="https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38">Nginx SSL configuration</a></p>
+    </div>
+    <!-- Footer -->
+    <footer class="ui footer container">
+        <div class="ui grid">
+            <div class="center aligned column">
+                <div class="ui link list">
+                    <div class="item" style="color:rgba(40,40,40,.3)">
+                        By <a href="mailto:mrouhi13@gmail.com" title="Contact Email">Majid Rouhi</a> © 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../static/js/default.min.js"></script>
+</body>
+</html>

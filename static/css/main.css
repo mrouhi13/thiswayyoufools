@@ -78,7 +78,6 @@ h2 a:hover {
 .sidebar.icon, .close.icon {
     color: #929292;
     font-size: .75em !important;
-    padding-top: 0.2em !important;
 }
 
 .item.right a {

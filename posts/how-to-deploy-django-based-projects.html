@@ -115,21 +115,19 @@
 </div>
 <!-- Content -->
 <div class="ui image full-width">
-    <a href="https://unsplash.com/photos/ogJNR_jhxS8" class="ui medium right corner label" target=_blank
-       title="Photo Source">
-        <i class="linkify grey icon"></i>
-    </a>
     <img src="../static/images/posts/1-charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
          title="How to deploy Django based projects?" width=100% height=100%>
 </div>
 <div class="ui text container masthead">
     <div class="ui image container-width">
-        <a href="https://unsplash.com/photos/ogJNR_jhxS8" class="ui medium right corner label" target=_blank
-           title="Photo Source">
-            <i class="linkify grey icon"></i>
-        </a>
         <img src="../static/images/posts/1-charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
              title="How to deploy Django based projects?" width=100% height=100%>
+        <div class="ui link list right floated" style="font-size:12px;margin:.4em 0">
+            <p class="ui item">
+                <a href="https://unsplash.com/photos/ogJNR_jhxS8"><i class="external alternate small icon"></i>from
+                    Unsplash</a>
+            </p>
+        </div>
     </div>
     <div class="post-body">
         <h2 class="ui header">Introduction</h2>
@@ -466,9 +464,16 @@ server {
             developer, you should look for hardening, security, performance, SSL certification and etc. This post is
             very simplified and general to useable for everyone. you can search about the tools we used in
             this post and find the best solution for your project. I suggest some link below to start:</p>
-        <p><a href="http://docs.gunicorn.org/en/stable/configure.html">Gunicorn official documentation</a></p>
-        <p><a href="http://supervisord.org/running.html">Supervisor official documentation</a></p>
-        <p><a href="https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38">Nginx SSL configuration</a></p>
+
+        <div class="item">
+            <p><a href="http://docs.gunicorn.org/en/stable/configure.html">Gunicorn official documentation</a></p>
+        </div>
+        <div class="item">
+            <p><a href="http://supervisord.org/running.html">Supervisor official documentation</a></p>
+        </div>
+        <div class="item">
+            <p><a href="https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38">Nginx SSL configuration</a></p>
+        </div>
     </div>
 </div>
 <!-- Footer -->

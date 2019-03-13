@@ -191,6 +191,11 @@ pre .line::before {
     margin-bottom: 4px;
 }
 
+.image-source {
+    font-size: 12px;
+    margin: .4em;
+}
+
 @media only screen and (max-width: 700px) {
     .masthead h1.ui.header {
         font-size: 2.1em;

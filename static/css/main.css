@@ -192,8 +192,8 @@ pre .line::before {
 }
 
 .image-source {
-    font-size: 12px;
-    margin: .4em;
+    font-size: 12px !important;
+    margin: .4em !important;
 }
 
 @media only screen and (max-width: 700px) {

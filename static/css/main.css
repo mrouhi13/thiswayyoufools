@@ -115,6 +115,10 @@ h2 a:hover {
     margin-bottom: 2.5em !important;
 }
 
+.sub-header img {
+    width: 48px !important;
+}
+
 .code-label {
     display: block;
     padding: 8px 15px;

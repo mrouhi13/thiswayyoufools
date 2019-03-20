@@ -65,7 +65,7 @@
 <!-- Desktop fixed menu -->
 <div class="ui top fixed text menu desktop">
     <div class="ui container">
-        <div class="fixed item header">This way, You fools!</div>
+        <div class="fixed item header" itemprop=title>This way, You fools!</div>
         <a class="fixed item active" href="index.html" title="Blog">Blog</a>
         <a class="fixed item" href="about.html" title="About">About</a>
         <a class="fixed item" href="projects.html" title="Projects">Projects</a>
@@ -84,7 +84,7 @@
     <div class="ui container">
         <div class="fixed item header">
             <i class="sidebar icon"></i>
-            <div class="content">This way, You fools!</div>
+            <div class="content" itemprop=title>This way, You fools!</div>
         </div>
         <div class="closed">
             <a class="fixed item active" href="index.html" title="Blog">Blog</a>
@@ -104,7 +104,7 @@
 <!-- Header -->
 <div class="ui container masthead center aligned overlay">
     <div class="page-header">
-        <h1 id="title" class="ui header">This way, You fools!</h1>
+        <h1 id="title" class="ui header" itemprop=title>This way, You fools!</h1>
         <div id="menu" class="ui horizontal link list">
             <a class="item active" href="index.html" title="Blog">Blog</a>
             <a class="item" href="about.html" title="About">About</a>
@@ -115,13 +115,13 @@
 <!-- Content -->
 <!-- #1 -->
 <div class="ui fluid image full-width">
-    <a href="posts/how-to-deploy-django-based-projects.html" class="ui image"
+    <a href="posts/how-to-deploy-django-based-projects.html" class="ui image" itemprop=url
        title="How to deploy Django based projects?">
         <img src="static/images/posts/1-charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
              title="How to deploy Django based projects?" width=100% height=100%>
     </a>
 </div>
-<div class="ui text container masthead">
+<div class="ui text container masthead" itemprop=content>
     <div class="ui fluid image container-width">
         <a href="posts/how-to-deploy-django-based-projects.html" class="ui image"
            title="How to deploy Django based projects?">
@@ -130,7 +130,8 @@
         </a>
     </div>
     <h2 class="ui header center aligned large">
-        <a href="posts/how-to-deploy-django-based-projects.html" title="How to deploy Django based projects?">
+        <a href="posts/how-to-deploy-django-based-projects.html" title="How to deploy Django based projects?"
+           itemprop=url>
             How to deploy Django based projects?
         </a>
     </h2>

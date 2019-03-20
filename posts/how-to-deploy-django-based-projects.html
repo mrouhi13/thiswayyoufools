@@ -13,20 +13,20 @@
     <!-- Site Properties -->
     <title>Blog | This way, You fools!</title>
     <link rel=canonical href="https://www.thiswayyoufools.com/posts/how-to-deploy-django-based-projects.html">
-    <link rel=stylesheet type="text/css" href="../static/css/default.min.css">
+    <link rel=stylesheet type="text/css" href="/static/css/default.min.css">
 
     <!-- Favicon -->
-    <link rel=apple-touch-icon sizes=180x180 href="images/favicon/apple-touch-icon.png">
-    <link rel=icon type="image/png" sizes=2x32 href="images/favicon/favicon-32x32.png">
-    <link rel=icon type="image/png" sizes=16x16 href="images/favicon/favicon-16x16.png">
-    <link rel=manifest href="images/favicon/site.webmanifest">
-    <link rel=mask-icon href="images/favicon/safari-pinned-tab.svg" color=#000000>
-    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <link rel=apple-touch-icon sizes=180x180 href="/static/images/favicon/apple-touch-icon.png">
+    <link rel=icon type="image/png" sizes=2x32 href="/static/images/favicon/favicon-32x32.png">
+    <link rel=icon type="image/png" sizes=16x16 href="/static/images/favicon/favicon-16x16.png">
+    <link rel=manifest href="/static/images/favicon/site.webmanifest">
+    <link rel=mask-icon href="/static/images/favicon/safari-pinned-tab.svg" color=#000000>
+    <link rel="shortcut icon" href="/static/images/favicon/favicon.ico">
     <meta name=apple-mobile-web-app-title content=TWYF>
     <meta name=application-name content=TWYF>
     <meta name=msapplication-TileColor content=#000000>
-    <meta name=msapplication-TileImage content="static/images/favicons/mstile-144x144.png">
-    <meta name=msapplication-config content="static/images/favicons/browserconfig.xml">
+    <meta name=msapplication-TileImage content="/static/images/favicons/mstile-144x144.png">
+    <meta name=msapplication-config content="/static/images/favicons/browserconfig.xml">
     <meta name=theme-color content=#000000>
 
     <!-- Opengraph Meta -->
@@ -76,9 +76,9 @@
 <div id="post-menu" class="ui top fixed text menu desktop" style="background:#fff">
     <div class="ui container">
         <div class="item header" itemprop=title>This way, You fools!</div>
-        <a class="item active" href="../index.html" title="Blog">Blog</a>
-        <a class="item" href="../about.html" title="About">About</a>
-        <a class="item" href="../projects.html" title="Projects">Projects</a>
+        <a class="item active" href="/" title="Blog">Blog</a>
+        <a class="item" href="/about.html" title="About">About</a>
+        <a class="item" href="/projects.html" title="Projects">Projects</a>
         <div class="item right">
             <a href="https://twitter.com/mrouhi13" title="Twitter">
                 <i class="twitter link large grey icon"></i>
@@ -97,9 +97,9 @@
             <div class="content" itemprop=title>This way, You fools!</div>
         </div>
         <div class="closed">
-            <a class="item active" href="../index.html" title="Blog">Blog</a>
-            <a class="item" href="../about.html" title="About">About</a>
-            <a class="item" href="../projects.html" title="Projects">Projects</a>
+            <a class="item active" href=/" title="Blog">Blog</a>
+            <a class="item" href="/about.html" title="About">About</a>
+            <a class="item" href="/projects.html" title="Projects">Projects</a>
         </div>
         <div class="item right">
             <a href="https://twitter.com/mrouhi13" title="Twitter">
@@ -127,7 +127,7 @@
 </div>
 <!-- Content -->
 <div class="ui image full-width">
-    <img src="../static/images/posts/1-charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
+    <img src="/static/images/posts/1-charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
          title="How to deploy Django based projects?" width=100% height=100%>
     <div class="ui link list right floated image-source">
         <p class="ui item">
@@ -138,13 +138,12 @@
 </div>
 <div class="ui text container masthead" itemprop=content>
     <div class="ui image container-width">
-        <img src="../static/images/posts/1-charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
+        <img src="/static/images/posts/1-charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
              title="How to deploy Django based projects?" width=100% height=100%>
         <div class="ui link list right floated image-source">
             <p class="ui item">
                 <a href="https://unsplash.com/photos/ogJNR_jhxS8" itemprop=url><i
-                        class="external alternate small icon"></i>from
-                    Unsplash</a>
+                        class="external alternate small icon"></i>from Unsplash</a>
             </p>
         </div>
     </div>
@@ -455,7 +454,7 @@ server {
         </ul></code></pre>
         <p>After all these things, check your domain (or IP or localhost if your on a test environment) and you must see
             something like this:</p>
-        <p><img src="../static/images/posts/1-final-result.jpg" alt="Final Result" title="Final Result" width=100%
+        <p><img src="/static/images/posts/1-final-result.jpg" alt="Final Result" title="Final Result" width=100%
                 height=100%></p>
         <h2>How to update our project?</h2>
         <p>For updating our project files using git, we need to take a few steps:</p>
@@ -507,6 +506,6 @@ server {
         </div>
     </div>
 </footer>
-<script src="../static/js/default.min.js"></script>
+<script src="/static/js/default.min.js"></script>
 </body>
 </html>

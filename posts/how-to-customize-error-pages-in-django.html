@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- Standard Meta -->
+    <meta charset=UTF-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name=description
+          content="Customizing error pages in your web application or web site is a very useful feature because of it’s giving a good experience to users and let you lead users to the proper page after seeing the error.">
+    <meta name=keywords content="django,python,error,customize,error handler,error pages">
+    <meta name=robots content="index, nofollow">
+
+    <!-- Site Properties -->
+    <title>How to customize error pages in Django? | This way, You fools!</title>
+    <link rel=canonical href="https://www.thiswayyoufools.com/posts/how-to-customize-error-pages-in-django.html">
+    <link rel=stylesheet type="text/css" href="/static/css/default.min.css">
+
+    <!-- Favicon -->
+    <link rel=apple-touch-icon sizes=180x180 href="/static/images/favicon/apple-touch-icon.png">
+    <link rel=icon type="image/png" sizes=32x32 href="/static/images/favicon/favicon-32x32.png">
+    <link rel=icon type="image/png" sizes=16x16 href="/static/images/favicon/favicon-16x16.png">
+    <link rel=manifest href="/static/images/favicon/site.webmanifest">
+    <link rel=mask-icon href="/static/images/favicon/safari-pinned-tab.svg" color=#444444>
+    <link rel="shortcut icon" href="/static/images/favicon/favicon.ico">
+    <meta name=apple-mobile-web-app-title content=TWYF>
+    <meta name=application-name content=TWYF>
+    <meta name=msapplication-TileColor content=#eeeeee>
+    <meta name=msapplication-TileImage content="/static/images/favicons/mstile-144x144.png">
+    <meta name=msapplication-config content="/static/images/favicons/browserconfig.xml">
+    <meta name=theme-color content=#eeeeee>
+
+    <!-- Opengraph Meta -->
+    <meta property="og:title" content="How to customize error pages in Django?">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.thiswayyoufools.com/posts/how-to-customize-error-pages-in-django.html">
+    <meta property="og:image"
+          content="https://www.thiswayyoufools.com/static/images/posts/2-tiplada-mekvisan-763128-unsplash.jpeg">
+    <meta property="og:description"
+          content="Customizing error pages in your web application or web site is a very useful feature because of it’s giving a good experience to users and let you lead users to the proper page after seeing the error.">
+    <meta property="og:site_name" content="This way, You fools!">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="app">
+    <meta name="twitter:title" content="How to customize error pages in Django?">
+    <meta name="twitter:site" content="@mrouhi13">
+    <meta name="twitter:creator" content="@mrouhi13">
+    <meta name="twitter:image"
+          content="https://www.thiswayyoufools.com/static/images/posts/2-tiplada-mekvisan-763128-unsplash.jpeg">
+    <meta name="twitter:description"
+          content="Customizing error pages in your web application or web site is a very useful feature because of it’s giving a good experience to users and let you lead users to the proper page after seeing the error.">
+
+    <!-- Article Meta -->
+    <meta property="article:published_time" content="2019-03-21T16:24:00+03:30">
+    <meta property="article:author" content="https://twitter.com/mrouhi13">
+    <meta property="article:tag" content="django">
+    <meta property="article:tag" content="error">
+    <meta property="article:tag" content="python">
+    <meta property="article:tag" content="customize">
+    <meta property="article:tag" content="error handler">
+    <meta property="article:tag" content="error pages">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126660701-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-126660701-3');
+    </script>
+</head>
+<body>
+<!-- Desktop fixed menu -->
+<div id="post-menu" class="ui top fixed text menu desktop" style="background:#fff">
+    <div class="ui container">
+        <div class="item header" itemprop=title>This way, You fools!</div>
+        <a class="item active" href="/" title="Blog">Blog</a>
+        <a class="item" href="/about.html" title="About">About</a>
+        <a class="item" href="/projects.html" title="Projects">Projects</a>
+        <div class="item right">
+            <a href="https://twitter.com/mrouhi13" title="Twitter">
+                <i class="twitter link large grey icon"></i>
+            </a>
+            <a href="https://github.com/mrouhi13" title="Github">
+                <i class="github link large grey icon"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Mobile fixed menu -->
+<div class="ui top fixed text menu mobile">
+    <div class="ui container">
+        <div class="item header">
+            <i class="sidebar icon"></i>
+            <div class="content" itemprop=title>This way, You fools!</div>
+        </div>
+        <div class="closed">
+            <a class="item active" href="/" title="Blog">Blog</a>
+            <a class="item" href="/about.html" title="About">About</a>
+            <a class="item" href="/projects.html" title="Projects">Projects</a>
+        </div>
+        <div class="item right">
+            <a href="https://twitter.com/mrouhi13" title="Twitter">
+                <i class="twitter link large grey icon"></i>
+            </a>
+            <a href="https://github.com/mrouhi13" title="Github">
+                <i class="github link large grey icon"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Header -->
+<div class="ui container masthead center aligned overlay">
+    <div class="page-header">
+        <h1 id="title" class="ui header" itemprop=title>How to customize error pages in Django?</h1>
+        <div id="menu" class="ui horizontal link list">
+            <div class="item">
+                <i class="calendar alternate outline icon" style="margin-right:.2em"></i>March 21, 2019
+            </div>
+            <div class="item">
+                <i class="clock outline icon" style="margin-right:.2em"></i>2 Minutes
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content -->
+<div class="ui image full-width">
+    <img src="/static/images/posts/2-tiplada-mekvisan-763128-unsplash.jpeg" alt="How to customize error pages in Django?"
+         title="How to customize error pages in Django?" width=100% height=100%>
+    <div class="ui link list right floated image-source">
+        <p class="ui item">
+            <a href="https://unsplash.com/photos/4POdKVRh_Lo" itemprop=url><i class="external alternate small icon"></i>from
+                Unsplash</a>
+        </p>
+    </div>
+</div>
+<div class="ui text container masthead" itemprop=content>
+    <div class="ui image container-width">
+        <img src="/static/images/posts/2-tiplada-mekvisan-763128-unsplash.jpeg" alt="How to customize error pages in Django?"
+             title="How to customize error pages in Django?" width=100% height=100%>
+        <div class="ui link list right floated image-source">
+            <p class="ui item">
+                <a href="https://unsplash.com/photos/4POdKVRh_Lo" itemprop=url><i
+                        class="external alternate small icon"></i>from Unsplash</a>
+            </p>
+        </div>
+    </div>
+    <div class="post-body">
+        <h2 class="ui header">Introduction</h2>
+        <p>Customizing error pages in your web application or web site is a very useful feature because of it’s giving a
+            good experience to users and let you lead users to the proper page after seeing the error. So let see how to
+            customize these pages in Django projects.</p>
+        <div class="ui section divider"></div>
+        <div class="ui visible info small message">
+            <div class="header">Note</div>
+            <p>This tutorial based on Django 2.0<</p>
+        </div>
+        <h2 class="ui header">Step 1 - Preparing Templates:</h2>
+        <p>OK, First of all, we need to create our templates. By default Django serves 4 templates for bad requests
+            (400), permission denied (403), not found (404) and server error (500) errors, so we must override this
+            template to use our customized pages. You can design your pages on your way then put those in this path:</p>
+        <pre><code>your_project_root/your_app/templates/your_app/errors/</code></pre>
+        <h2>Step 2 - Preparing Views:</h2>
+        <p>Next, put this code in your <em>views.py</em> file:</p>
+        <div class="code-label">views.py</div>
+        <pre><code>
+from Django.views import defaults
+
+ERROR_400_TEMPLATE_NAME = 'errors/error_400.html'
+ERROR_403_TEMPLATE_NAME = 'errors/error_403.html'
+ERROR_404_TEMPLATE_NAME = 'errors/error_404.html'
+ERROR_500_TEMPLATE_NAME = 'errors/error_500.html'
+
+
+def bad_request(request, exception, template_name=ERROR_400_TEMPLATE_NAME):
+    return defaults.bad_request(request, exception, template_name)
+
+
+def permission_denied(request, exception, template_name=ERROR_403_TEMPLATE_NAME):
+    return defaults.permission_denied(request, exception, template_name)
+
+
+def page_not_found(request, exception, template_name=ERROR_404_TEMPLATE_NAME):
+    return defaults.page_not_found(request, exception, template_name)
+
+
+def server_error(request, template_name=ERROR_500_TEMPLATE_NAME):
+    return defaults.server_error(request, template_name)</code></pre>
+        <p>Django by default define one function for each error and pass the template name to it.</p>
+        <h2>Step 3 - Preparing URLs:</h2>
+        <p>In this step, we must declare our views in <em>urls.py</em> file. In <em>urls.py</em> override default error handlers to
+            use our views.</p>
+        <div class="ui visible warning small message">
+            <div class="header">Important note</div>
+            <p>You must do this change in <strong>project level</strong> URLs.</p>
+        </div>
+        <div class="code-label">urls.py</div>
+        <pre><code>
+from django.contrib import admin
+from django.urls import path
+from my_app import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    . . .
+]
+
+handler400 = views.bad_request
+handler403 = views.permission_denied
+handler404 = views.page_not_found
+handler500 = views.server_error</code></pre>
+        <h2>Step 4 - Preparing Settings:</h2>
+        <p>Very well, the last step is to change the settings to see the result. You must deactivate <code>DEBUG</code> mode and add your host to <code>ALLOWED_HOSTS</code>, so do it:</p>
+                <div class="code-label">settings.py</div>
+        <pre><code>
+DEBUG = False
+
+ALLOWED_HOSTS = [‘localhost’, ‘127.0.0.1’, ...]</code></pre>
+        <p>OK, for testing the changes, make a fake error, for example, an incorrect URL and see changes.</p>
+        <h2>Conclusion:</h2>
+        <p>It’s really simple but so important to display proper page to users. It gives a good feeling to them and
+            makes a good user experience.</p>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="ui footer container">
+    <div class="ui grid">
+        <div class="center aligned column">
+            <div class="ui link list">
+                <div class="item" style="color:rgba(40,40,40,.3)">
+                    By <a href="mailto:mrouhi13@gmail.com" title="Contact Email">Majid Rouhi</a> © 2019
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/static/js/default.min.js"></script>
+</body>
+</html>

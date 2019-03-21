@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://www.thiswayyoufools.com/</loc>
+        <loc>https://www.thiswayyoufools.com</loc>
         <lastmod>2019-03-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
@@ -19,19 +19,19 @@
     <url>
         <loc>https://www.thiswayyoufools.com/about.html</loc>
         <lastmod>2019-03-07</lastmod>
-        <changefreq>daily</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.thiswayyoufools.com/projects.html</loc>
         <lastmod>2019-03-07</lastmod>
-        <changefreq>daily</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.thiswayyoufools.com/posts/how-to-deploy-django-based-projects.html</loc>
         <lastmod>2019-03-07</lastmod>
-        <changefreq>daily</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 </urlset>

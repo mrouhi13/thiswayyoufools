@@ -23,7 +23,8 @@ h2 a:hover {
 }
 
 .masthead p {
-    line-height: 1.4em;
+    font-size: 1.2em;
+    line-height: 1.6em;
     font-style: normal;
     font-weight: 300;
 }

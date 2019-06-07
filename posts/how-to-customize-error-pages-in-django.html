@@ -153,9 +153,9 @@
     </div>
     <div class="post-body">
         <h2 class="ui header">Introduction</h2>
-        <p>Customizing error pages in your web application or web site is a very useful feature because of giving a
-            good experience to users and let you lead users to the proper page after seeing the error. So let see how to
-            customize these pages in Django projects.</p>
+        <p>Customizing error pages in your web application or web site is a very useful feature because of giving a good
+            experience to users and let you lead users to the proper page after seeing the error also improve your site
+            SEO rate. So let see how to customize these pages in Django projects.</p>
         <div class="ui section divider"></div>
         <div class="ui visible info small message">
             <div class="header">Note</div>
@@ -165,11 +165,13 @@
         <p>OK, First of all, we need to create our templates. By default Django serves 4 templates for bad requests
             (400), permission denied (403), not found (404) and server error (500) errors, so we must override this
             template to use our customized pages. You can design your pages on your way then put those in this path:</p>
-        <pre><code>your_project_root/your_app/templates/your_app/errors/</code></pre>
+        <pre><code>your_project_root/your_app_name/templates/your_app_name/errors/</code></pre>
         <h2>Step 2 - Preparing Views:</h2>
         <p>Next, put this code in your <em>views.py</em> file:</p>
         <div class="code-label">views.py</div>
         <pre><code>
+. . .
+
 from Django.views import defaults
 
 ERROR_400_TEMPLATE_NAME = 'errors/error_400.html'
@@ -191,7 +193,9 @@ def page_not_found(request, exception, template_name=ERROR_404_TEMPLATE_NAME):
 
 
 def server_error(request, template_name=ERROR_500_TEMPLATE_NAME):
-    return defaults.server_error(request, template_name)</code></pre>
+    return defaults.server_error(request, template_name)
+
+. . .</code></pre>
         <p>Django by default define one function for each error and pass the template name to it.</p>
         <h2>Step 3 - Preparing URLs:</h2>
         <p>In this step, we must declare our views in <em>urls.py</em> file. In <em>urls.py</em> override default error

@@ -134,6 +134,16 @@ h2 a:hover {
     position: relative;
 }
 
+.code-label a {
+    color: #3a3a3a;
+    cursor: pointer;
+}
+
+.code-label a i {
+    position: absolute;
+    right: 15px;
+}
+
 pre {
     margin: 1rem 0;
     padding: 1rem;

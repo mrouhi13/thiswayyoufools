@@ -1,3 +1,9 @@
+let clipboard = new ClipboardJS('.code-label a', {
+    text: function (trigger) {
+        let code = trigger.parentElement.nextElementSibling.firstChild.innerText;
+        return code.replace(/\. \. \./g,'').trim();
+    }
+});
 const $fixedMenu = $('.fixed.menu');
 const $fixedItem = $('.fixed.item');
 const $mobileMenuTitle = $('.ui.fixed.menu.mobile .item.header div.content');
@@ -41,3 +47,13 @@ $mobileMenu.on('click', function () {
         $mobileMenuTitle.hide('fast');
     }
 });
+
+function copyCode(el) {
+    clipboard.on('success', function () {
+        el.parentElement.setAttribute('data-tooltip', 'Copied');
+
+        setTimeout(function () {
+            el.parentElement.setAttribute('data-tooltip', 'Copy Code');
+        }, 1000);
+    });
+}

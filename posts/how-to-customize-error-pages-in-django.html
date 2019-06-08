@@ -13,7 +13,7 @@
     <!-- Site Properties -->
     <title>How to customize error pages in Django? | This way, You fools!</title>
     <link rel=canonical href="https://www.thiswayyoufools.com/posts/how-to-customize-error-pages-in-django.html">
-    <link rel=stylesheet type="text/css" href="/static/css/default.min.css">
+    <link rel=stylesheet type="text/css" href="static/css/default.min.css">
 
     <!-- Favicon -->
     <link rel=apple-touch-icon sizes=180x180 href="/static/images/favicon/apple-touch-icon.png">
@@ -168,7 +168,8 @@
         <pre><code>your_project_root/your_app_name/templates/your_app_name/errors/</code></pre>
         <h2>Step 2 - Preparing Views:</h2>
         <p>Next, put this code in your <em>views.py</em> file:</p>
-        <div class="code-label">views.py</div>
+        <div class="code-label" data-tooltip="Copy Code" data-position="top right" data-inverted="">views.py <a
+                onclick="copyCode(this)"><i class="copy outline icon"></i></a></div>
         <pre><code>
 . . .
 
@@ -205,15 +206,15 @@ def server_error(request, template_name=ERROR_500_TEMPLATE_NAME):
             <div class="header">Important note</div>
             <p>You must do the alteration in <strong>project level</strong> URLs.</p>
         </div>
-        <div class="code-label">urls.py</div>
+        <div class="code-label" data-tooltip="Copy Code" data-position="top right" data-inverted="">urls.py <a
+                onclick="copyCode(this)"><i class="copy outline icon"></i></a></div>
         <pre><code>
 from django.contrib import admin
 from django.urls import path
 from my_app import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    . . .
+    path('admin/', admin.site.urls)
 ]
 
 handler400 = views.bad_request
@@ -223,11 +224,12 @@ handler500 = views.server_error</code></pre>
         <h2>Step 4 - Preparing Settings:</h2>
         <p>Very well, the last step is to change the settings to see the result. You must deactivate <code>DEBUG</code>
             mode and add your host to <code>ALLOWED_HOSTS</code>, so do it:</p>
-        <div class="code-label">settings.py</div>
+        <div class="code-label" data-tooltip="Copy Code" data-position="top right" data-inverted="">settings.py <a
+                onclick="copyCode(this)"><i class="copy outline icon"></i></a></div>
         <pre><code>
 DEBUG = False
 
-ALLOWED_HOSTS = [‘localhost’, ‘127.0.0.1’, ...]</code></pre>
+ALLOWED_HOSTS = [‘localhost’, ‘127.0.0.1’]</code></pre>
         <p>OK, for testing the changes, make a fake error, for example, an incorrect URL and see changes.</p>
         <h2>Conclusion:</h2>
         <p>It’s really simple but so important to display proper page to users. It gives a good feeling to them and
@@ -246,6 +248,6 @@ ALLOWED_HOSTS = [‘localhost’, ‘127.0.0.1’, ...]</code></pre>
         </div>
     </div>
 </footer>
-<script src="/static/js/default.min.js"></script>
+<script src="static/js/default.min.js"></script>
 </body>
 </html>

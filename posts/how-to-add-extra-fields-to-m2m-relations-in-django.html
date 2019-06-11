@@ -254,10 +254,10 @@ COMMIT;</code></pre>
             unique together index to avoid integrity error. The two next create indexes that create an intermediate
             table to store records.</p>
         <p>So far everything is fine. Now we need to save customers feedback per request. The optimized solution is
-            using
-            created the intermediary model to add our extra fields and save data. But how? <code>ManyToManyField</code>
-            has an option named <code>through</code> to specify the Django model that override the automatically
-            generated model. With this option, we can create a new model class and add our extra fields to it.</p>
+            using created the intermediary model to add our extra fields and save data. But how?
+            <code>ManyToManyField</code> has an option named <code>through</code> to specify the Django model that
+            override the automatically generated model. With this option, we can create a new model class and add our
+            extra fields to it.</p>
         <p>So we change our models like below:</p>
         <pre><code>
 from django.db import models
@@ -343,10 +343,12 @@ COMMIT;</code></pre>
             <p><a href="https://www.quackit.com/database/tutorial/">Database Tutorial</a></p>
         </div>
         <div class="item">
-            <p><a href="https://www.webucator.com/tutorial/learn-sql/relational-database-basics.cfm">Relational Database Basics</a></p>
+            <p><a href="https://www.webucator.com/tutorial/learn-sql/relational-database-basics.cfm">Relational Database
+                Basics</a></p>
         </div>
         <div class="item">
-            <p><a href="https://www.lucidchart.com/pages/database-diagram/database-design">Database Structure and Design Tutorial</a></p>
+            <p><a href="https://www.lucidchart.com/pages/database-diagram/database-design">Database Structure and Design
+                Tutorial</a></p>
         </div>
     </div>
 </div>

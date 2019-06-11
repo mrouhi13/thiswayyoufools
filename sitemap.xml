@@ -35,8 +35,14 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://www.thiswayyoufools.com/posts/how-to-customize-error-pages-in-django.html</loc>
+        <loc>https://www.thiswayyoufools.com/posts/how-to-override-error-pages-in-django.html</loc>
         <lastmod>2019-03-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.thiswayyoufools.com/posts/how-to-add-extra-fields-to-m2m-relations-in-django.html</loc>
+        <lastmod>2019-06-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>

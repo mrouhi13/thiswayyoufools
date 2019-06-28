@@ -188,18 +188,18 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Business(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_('owner'))
     name = models.CharField(_('name'), max_length=125)
 
     class Meta:
-        verbose_name_plural = 'Businesses'
+        verbose_name_plural = _('businesses')
 
     def __str__(self):
         return self.name
 
 
 class Customer(models.Model):
-    business = models.ForeignKey(Business, on_delete=models.CASCADE)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, verbose_name=_('business'))
     first_name = models.CharField(_('first name'), max_length=30)
     last_name = models.CharField(_('last name'), max_length=150)
     email = models.EmailField(_('email'))
@@ -212,7 +212,7 @@ class Customer(models.Model):
 
 
 class Request(models.Model):
-    business = models.ForeignKey(Business, on_delete=models.CASCADE)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, verbose_name=_('business'))
     <strong>customer = models.ManyToManyField(Customer)</strong>
     name = models.CharField(_('name'), max_length=225)
 
@@ -266,18 +266,18 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Business(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_('owner'))
     name = models.CharField(_('name'), max_length=125)
 
     class Meta:
-        verbose_name_plural = 'Businesses'
+        verbose_name_plural = _('businesses')
 
     def __str__(self):
         return self.name
 
 
 class Customer(models.Model):
-    business = models.ForeignKey(Business, on_delete=models.CASCADE)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, verbose_name=_('business'))
     first_name = models.CharField(_('first name'), max_length=30)
     last_name = models.CharField(_('last name'), max_length=150)
     email = models.EmailField(_('email'))
@@ -290,7 +290,7 @@ class Customer(models.Model):
 
 
 class Request(models.Model):
-    business = models.ForeignKey(Business, on_delete=models.CASCADE)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, verbose_name=_('business'))
     <strong>feedback = models.ManyToManyField(Customer, through='Feedback')</strong>
     name = models.CharField(_('name'), max_length=225)
 

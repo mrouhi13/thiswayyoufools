@@ -2,14 +2,23 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: #4D4D4D;
+}
+
+h2 {
+    color: #4D4D4D;
 }
 
 h2 a {
-    color: #222;
+    color: #4D4D4D;
 }
 
 h2 a:hover {
-    color: rgba(0, 0, 0, .4);
+    color: #757575;
+}
+
+.ui.header {
+    color: #4D4D4D;
 }
 
 .masthead {
@@ -27,6 +36,7 @@ h2 a:hover {
     line-height: 1.6em;
     font-style: normal;
     font-weight: 300;
+    color: #4D4D4D;
 }
 
 .ui.grid {
@@ -192,7 +202,6 @@ pre .line::before {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    -o-user-select: none;
     user-select: none;
     content: '$';
     text-align: right;

@@ -4,38 +4,56 @@
     <!-- Standard Meta -->
     <meta charset=UTF-8>
     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name=viewport
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name=description
-          content="In this post, I show how to deploy a Django project to a server using tools like Gunicorn, Supervisor, Virtualenv and etc.">
-    <meta name=keywords content="django,python,gunicorn,supervisor,virtualenv,ubuntu,pip,postgres,nginx,server,deploy">
+          content="In this post, I show how to deploy a Django project to a
+          server using tools like Gunicorn, Supervisor, Virtualenv and etc.">
+    <meta name=keywords
+          content="django,python,gunicorn,supervisor,virtualenv,ubuntu,pip,
+          postgres,nginx,server,deploy">
     <meta name=robots content="index, nofollow">
 
     <!-- Site Properties -->
     <title>How to deploy Django based projects? | This way, You fools!</title>
-    <link rel=canonical href="https://thiswayyoufools.com/posts/how-to-deploy-django-based-projects.html">
+    <link rel=canonical
+          href="https://thiswayyoufools.com/posts/how-to-deploy-django-based-projects.html">
     <link rel=stylesheet type="text/css" href="/static/css/default.min.css">
 
     <!-- Favicon -->
-    <link rel=apple-touch-icon sizes=180x180 href="/static/images/favicon/apple-touch-icon.png">
-    <link rel=icon type="image/png" sizes=32x32 href="/static/images/favicon/favicon-32x32.png">
-    <link rel=icon type="image/png" sizes=16x16 href="/static/images/favicon/favicon-16x16.png">
+    <link rel=apple-touch-icon sizes=180x180
+          href="/static/images/favicon/apple-touch-icon.png">
+    <link rel=icon type="image/png" sizes=32x32
+          href="/static/images/favicon/favicon-32x32.png">
+    <link rel=icon type="image/png" sizes=16x16
+          href="/static/images/favicon/favicon-16x16.png">
     <link rel=manifest href="/static/images/favicon/site.webmanifest">
-    <link rel=mask-icon href="/static/images/favicon/safari-pinned-tab.svg" color=#444444>
+    <link rel=mask-icon href="/static/images/favicon/safari-pinned-tab.svg"
+          color=#444444>
     <link rel="shortcut icon" href="/static/images/favicon/favicon.ico">
     <meta name=apple-mobile-web-app-title content=TWYF>
     <meta name=application-name content=TWYF>
     <meta name=msapplication-TileColor content=#eeeeee>
-    <meta name=msapplication-TileImage content="/static/images/favicons/mstile-144x144.png">
-    <meta name=msapplication-config content="/static/images/favicons/browserconfig.xml">
+    <meta name=msapplication-TileImage
+          content="/static/images/favicons/mstile-144x144.png">
+    <meta name=msapplication-config
+          content="/static/images/favicons/browserconfig.xml">
     <meta name=theme-color content=#eeeeee>
 
     <!-- Opengraph Meta -->
     <meta property="og:title" content="How to deploy Django based projects?">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://thiswayyoufools.com/posts/how-to-deploy-django-based-projects.html">
-    <meta property="og:image" content="https://thiswayyoufools.com/static/images/posts/1-charles-700420-unsplash.jpg">
+    <meta property="og:url"
+          content="https://thiswayyoufools.com/posts/how-to-deploy-django-based-projects.html">
+    <meta property="og:image"
+          content="https://thiswayyoufools.com/static/images/posts/1-charles-700420-unsplash.jpg">
     <meta property="og:description"
-          content="The world is very wide. Science, too. It's interesting to know that programming is also widespread. Python as a programming language has many orientations. For web development with Python, at this moment where I prepared this post, Django is a great and powerful web framework for this purpose. Let's see how to deploy a Django based project on the server...">
+          content="The world is very wide. Science, too. It's interesting to
+          know that programming is also widespread. Python as a programming
+          language has many orientations. For web development with Python, at
+          this moment where I prepared this post, Django is a great and
+          powerful web framework for this purpose. Let's see how to deploy a
+          Django based project on the server...">
     <meta property="og:site_name" content="This way, You fools!">
     <meta property="og:locale" content="en_US">
 
@@ -44,12 +62,19 @@
     <meta name="twitter:title" content="How to deploy Django based projects?">
     <meta name="twitter:site" content="@mrouhi13">
     <meta name="twitter:creator" content="@mrouhi13">
-    <meta name="twitter:image" content="https://thiswayyoufools.com/static/images/posts/1-charles-700420-unsplash.jpg">
+    <meta name="twitter:image"
+          content="https://thiswayyoufools.com/static/images/posts/1-charles-700420-unsplash.jpg">
     <meta name="twitter:description"
-          content="The world is very wide. Science, too. It's interesting to know that programming is also widespread. Python as a programming language has many orientations. For web development with Python, at this moment where I prepared this post, Django is a great and powerful web framework for this purpose. Let's see how to deploy a Django based project on the server...">
+          content="The world is very wide. Science, too. It's interesting to
+          know that programming is also widespread. Python as a programming
+          language has many orientations. For web development with Python, at
+          this moment where I prepared this post, Django is a great and
+          powerful web framework for this purpose. Let's see how to deploy a
+          Django based project on the server...">
 
     <!-- Article Meta -->
-    <meta property="article:published_time" content="2019-02-02T19:13:00+03:30">
+    <meta property="article:published_time"
+          content="2019-02-02T19:13:00+03:30">
     <meta property="article:author" content="https://twitter.com/mrouhi13">
     <meta property="article:tag" content="django">
     <meta property="article:tag" content="python">
@@ -59,7 +84,9 @@
     <meta property="article:tag" content="supervisor">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126660701-3"></script>
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-126660701-3">
+    </script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -73,7 +100,8 @@
 </head>
 <body>
 <!-- Desktop fixed menu -->
-<div id="post-menu" class="ui top fixed text menu desktop" style="background:#fff">
+<div id="post-menu" class="ui top fixed text menu desktop"
+     style="background:#fff">
     <div class="ui container">
         <div class="item header" itemprop=title>This way, You fools!</div>
         <a class="item active" href="/" title="Blog">Blog</a>
@@ -114,48 +142,67 @@
 <!-- Header -->
 <div class="ui container masthead center aligned overlay">
     <div class="page-header">
-        <h1 id="title" class="ui header" itemprop=title>How to deploy Django based projects?</h1>
+        <h1 id="title" class="ui header" itemprop=title>
+            How to deploy Django based projects?
+        </h1>
         <div id="menu" class="ui horizontal link list">
             <div class="item">
-                <i class="calendar alternate outline icon" style="margin-right:.2em"></i>February 02, 2019
+                <i class="calendar alternate outline icon"
+                   style="margin-right:.2em"></i>
+                February 02, 2019
             </div>
             <div class="item">
-                <i class="clock outline icon" style="margin-right:.2em"></i>5 Minutes
+                <i class="clock outline icon" style="margin-right:.2em"></i>
+                5 Minutes
             </div>
         </div>
     </div>
 </div>
 <!-- Content -->
 <div class="ui image full-width">
-    <img src="/static/images/posts/1-charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
+    <img src="/static/images/posts/1-charles-700420-unsplash.jpg"
+         alt="How to deploy Django based projects?"
          title="How to deploy Django based projects?" width=100% height=100%>
     <div class="ui link list right floated image-source">
         <p class="ui item">
-            <a href="https://unsplash.com/photos/ogJNR_jhxS8" itemprop=url><i class="external alternate small icon"></i>from
-                Unsplash</a>
+            <a href="https://unsplash.com/photos/ogJNR_jhxS8" itemprop=url><i
+                    class="external alternate small icon"></i>
+                from Unsplash
+            </a>
         </p>
     </div>
 </div>
 <div class="ui text container masthead" itemprop=content>
     <div class="ui image container-width">
-        <img src="/static/images/posts/1-charles-700420-unsplash.jpg" alt="How to deploy Django based projects?"
-             title="How to deploy Django based projects?" width=100% height=100%>
+        <img src="/static/images/posts/1-charles-700420-unsplash.jpg"
+             alt="How to deploy Django based projects?"
+             title="How to deploy Django based projects?" width=100%
+             height=100%>
         <div class="ui link list right floated image-source">
             <p class="ui item">
                 <a href="https://unsplash.com/photos/ogJNR_jhxS8" itemprop=url><i
-                        class="external alternate small icon"></i>from Unsplash</a>
+                        class="external alternate small icon"></i>
+                    from Unsplash
+                </a>
             </p>
         </div>
     </div>
     <div class="post-body">
         <h2 class="ui header">Introduction</h2>
-        <p>The world is very wide. Science, too. It's interesting to know that programming is also widespread. Python as
-            a programming language has many orientations. For web development with Python, at this moment where I
-            prepared this post, Django is a great and powerful web framework for this purpose. Let's see how to deploy a
-            Django based project on the server...</p>
+        <p>
+            The world is very wide. Science, too. It's interesting to know that
+            programming is also widespread. Python as a programming language
+            has many orientations. For web development with Python, at this
+            moment where I prepared this post, Django is a great and powerful
+            web framework for this purpose. Let's see how to deploy a Django
+            based project on the server...
+        </p>
         <div class="ui section divider"></div>
-        <p>For running Django projects on a production/test server we have many tools with different combinations in
-            hand. We use this stack that listed below:</p>
+        <p>
+            For running Django projects on a production/test server we have
+            many tools with different combinations in hand. We use this stack
+            that listed below:
+        </p>
         <div class="ui bulleted list">
             <div class="item">Ubuntu 18.04</div>
             <div class="item">Python 3.6</div>
@@ -168,10 +215,14 @@
             <div class="item">Gunicorn 19.9.0</div>
         </div>
         <h2 class="ui header">Step 1 - Preparing Environment:</h2>
-        <p>At the beginning we need to prepare our deployment environment, so we should update our OS and install the
-            required packages.</p>
-        <p>1- First of all we need to create a new user for our project (I used my project name as username, you can use
-            anything else):</p>
+        <p>
+            At the beginning we need to prepare our deployment environment, so
+            we should update our OS and install the required packages.
+        </p>
+        <p>
+            1- First of all we need to create a new user for our project (I
+            used my project name as username, you can use anything else):
+        </p>
         <pre><code><ul class="prefixed">
             <li class="line">adduser eggplant</li>
         </ul></code></pre>
@@ -207,7 +258,9 @@ Done.</code></pre>
             <li class="line">sudo apt update</li>
            <li class="line">sudo apt upgrade</li>
         </ul></code></pre>
-        <p>5- Next, to running our project we need to install some packages:</p>
+        <p>
+            5- Next, to running our project we need to install some packages:
+        </p>
         <pre><code><ul class="prefixed">
             <li class="line">sudo apt install nginx postgresql python3-pip virtualenv supervisor</li>
         </ul></code></pre>
@@ -230,7 +283,10 @@ Done.</code></pre>
             <li class="line">exit</li>
         </ul></code></pre>
         <h2>Step 3 - Clone and Setup Project:</h2>
-        <p>Retrieve project files from the source control and then set up the environment.</p>
+        <p>
+            Retrieve project files from the source control and then set up the
+            environment.
+        </p>
         <p>1- Clone project (In this case I used Github):</p>
         <pre><code><ul class="prefixed">
             <li class="line">git clone https://github.com/mrouhi13/eggplant.git</li>
@@ -244,17 +300,26 @@ Done.</code></pre>
         <pre><code><ul class="prefixed">
             <li class="line">nano eggplant/settings.py</li>
         </ul></code></pre>
-        <p>and fill <code>SECRET_KEY</code> value. you can use <a
-                href="https://djecrety.ir"><strong>Djecrety</strong></a> to generate <code>SECRET_KEY</code> for
-            your project and then update database section with created user and database.</p>
+        <p>
+            and fill <code>SECRET_KEY</code> value. you can use
+            <a href="https://djecrety.ir"><strong>Djecrety</strong></a>
+            to generate <code>SECRET_KEY</code> for your project and then
+            update database section with created user and database.
+        </p>
         <div class="ui visible info small message">
             <div class="header">Note</div>
-            <p>In the settings.py file, by default <code>DEBUG = False</code>, this means you must set your server
-                IP or domain (if exist) in <code>ALLOWED_HOST</code>. You can set <code>DEBUG = True</code> if
-                testing on localhost.</p>
+            <p>
+                In the settings.py file, by default <code>DEBUG = False</code>,
+                this means you must set your server IP or domain (if exist) in
+                <code>ALLOWED_HOST</code>. You can set
+                <code>DEBUG = True</code> if testing on localhost.
+            </p>
         </div>
-        <div class="code-label" data-tooltip="Copy Code" data-position="top right" data-inverted="">eggplants/settings.py <a
-                onclick="copyCode(this)"><i class="copy outline icon"></i></a></div>
+        <div class="code-label" data-tooltip="Copy Code"
+             data-position="top right" data-inverted="">
+            eggplants/settings.py
+            <a onclick="copyCode(this)"><i class="copy outline icon"></i></a>
+        </div>
         <pre><code>
 SECRET_KEY = '&lt;secret_key_generated_by_djecrety&gt;'
 
@@ -288,7 +353,10 @@ DATABASES = {
 |--- README.md
 |--- requirements.txt
 |--- .gitignore</code></pre>
-        <p>5- Install the Django package and other dependencies package from <em>requirement.txt</em>:</p>
+        <p>
+            5- Install the Django package and other dependencies package from
+            <em>requirement.txt</em>:
+        </p>
         <pre><code><ul class="prefixed">
             <li class="line">pip install -r requirements.txt</li>
         </ul></code></pre>
@@ -309,7 +377,10 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.</code></pre>
         <p>Hit <em>Ctrl + c</em> to exit.</p>
         <h2>Step 4 - Preparing Gunicorn:</h2>
-        <p>In this step, we must connect gunicorn to project using <em>wsgi.py</em>.</p>
+        <p>
+            In this step, we must connect gunicorn to project using
+            <em>wsgi.py</em>.
+        </p>
         <div class="ui visible info small message">
             <div class="header">Note</div>
             <p>Gunicorn package installed with <em>requirements.txt</em>.</p>
@@ -318,8 +389,11 @@ Quit the server with CONTROL-C.</code></pre>
         <pre><code><ul class="prefixed">
             <li class="line">nano .env/bin/gunicorn_start</li>
         </ul></code></pre>
-        <div class="code-label" data-tooltip="Copy Code" data-position="top right" data-inverted="">.env/bin/gunicorn_start <a
-                onclick="copyCode(this)"><i class="copy outline icon"></i></a></div>
+        <div class="code-label" data-tooltip="Copy Code"
+             data-position="top right" data-inverted="">
+            .env/bin/gunicorn_start
+            <a onclick="copyCode(this)"><i class="copy outline icon"></i></a>
+        </div>
         <pre><code>
 #!/bin/bash
 NAME="eggplant"
@@ -371,8 +445,11 @@ exec .env/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
         <pre><code><ul class="prefixed">
             <li class="line">sudo nano /etc/supervisor/conf.d/eggplant.conf</li>
         </ul></code></pre>
-        <div class="code-label" data-tooltip="Copy Code" data-position="top right" data-inverted="">/etc/supervisor/conf.d/eggplant.conf <a
-                onclick="copyCode(this)"><i class="copy outline icon"></i></a></div>
+        <div class="code-label" data-tooltip="Copy Code"
+             data-position="top right" data-inverted="">
+            /etc/supervisor/conf.d/eggplant.conf
+            <a onclick="copyCode(this)"><i class="copy outline icon"></i></a>
+        </div>
         <pre><code>
 [program:eggplant]
 command=/home/eggplant/eggplant/.env/bin/gunicorn_start
@@ -395,18 +472,25 @@ stdout_logfile=/home/eggplant/eggplant/.env/logs/gunicorn-error.log</code></pre>
                 class="secondary-code-label">Output</div><code>eggplant RUNNING pid 30668, uptime 00:00:69</code></pre>
         <h2>Step 6 - Preparing Nginx:</h2>
         <p>Now we config webserver to publish our project to the internet.</p>
-        <p>1- First remove default config symlink and then enable and start nginx service:</p>
+        <p>
+            1- First remove default config symlink and then enable and start
+            nginx service:
+        </p>
         <pre><code><ul class="prefixed">
             <li class="line">sudo rm /etc/nginx/sites-enabled/default</li>
             <li class="line">sudo systemctl start nginx</li>
             <li class="line">sudo systemctl enable nginx</li>
         </ul></code></pre>
-        <p>2- Create a configuration file for our project and add the config to it:</p>
+        <p>2- Create a configuration file for our project and add the config to
+            it:</p>
         <pre><code><ul class="prefixed">
             <li class="line">sudo nano /etc/nginx/sites-available/eggplant</li>
         </ul></code></pre>
-        <div class="code-label" data-tooltip="Copy Code" data-position="top right" data-inverted="">/etc/nginx/sites-available/eggplant <a
-                onclick="copyCode(this)"><i class="copy outline icon"></i></a></div>
+        <div class="code-label" data-tooltip="Copy Code"
+             data-position="top right" data-inverted="">
+            /etc/nginx/sites-available/eggplant
+            <a onclick="copyCode(this)"><i class="copy outline icon"></i></a>
+        </div>
         <pre><code>
 upstream eggplant_server {
     server unix:/home/eggplant/eggplant/.env/run/gunicorn.sock fail_timeout=0;
@@ -450,16 +534,25 @@ server {
             <li class="line">sudo systemctl restart nginx</li>
         </ul></code></pre>
         <h2>Finally:</h2>
-        <p>We reboot the server to check everything is okay and all configuration correctly work:</p>
+        <p>
+            We reboot the server to check everything is okay and all
+            configuration correctly work:
+        </p>
         <pre><code><ul class="prefixed">
             <li class="line">sudo reboot</li>
         </ul></code></pre>
-        <p>After all these things, check your domain (or IP or localhost if your on a test environment) and you must see
-            something like this:</p>
-        <p><img src="/static/images/posts/1-final-result.jpg" alt="Final Result" title="Final Result" width=100%
+        <p>
+            After all these things, check your domain (or IP or localhost if
+            your on a test environment) and you must see something like this:
+        </p>
+        <p><img src="/static/images/posts/1-final-result.jpg"
+                alt="Final Result" title="Final Result" width=100%
                 height=100%></p>
         <h2>How to update our project?</h2>
-        <p>For updating our project files using git, we need to take a few steps:</p>
+        <p>
+            For updating our project files using git, we need to take a few
+            steps:
+        </p>
         <p>1- First, go to the project directory and activate virtualenv:</p>
         <pre><code><ul class="prefixed">
             <li class="line">cd eggplant</li>
@@ -480,19 +573,35 @@ server {
             <li class="line">exit</li>
         </ul></code></pre>
         <h2>Conclusion:</h2>
-        <p>I tried to show a basic tutorial on this post. Of course, most of the steps have more details and as a
-            developer, you should look for hardening, security, performance, SSL certification and etc. This post is
-            very simplified and general to usable for everyone. you can search about the tools we used in
-            this post and find the best solution for your project. I suggest some link below to start:</p>
+        <p>
+            I tried to show a basic tutorial on this post. Of course, most of
+            the steps have more details and as a developer, you should look
+            for hardening, security, performance, SSL certification and etc.
+            This post is very simplified and general to usable for everyone.
+            you can search about the tools we used in this post and find the
+            best solution for your project. I suggest some link below to start:
+        </p>
 
         <div class="item">
-            <p><a href="http://docs.gunicorn.org/en/stable/configure.html">Gunicorn official documentation</a></p>
+            <p>
+                <a href="http://docs.gunicorn.org/en/stable/configure.html">
+                    Gunicorn official documentation
+                </a>
+            </p>
         </div>
         <div class="item">
-            <p><a href="http://supervisord.org/running.html">Supervisor official documentation</a></p>
+            <p>
+                <a href="http://supervisord.org/running.html">
+                    Supervisor official documentation
+                </a>
+            </p>
         </div>
         <div class="item">
-            <p><a href="https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38">Nginx SSL configuration</a></p>
+            <p>
+                <a href="https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38">
+                    Nginx SSL configuration
+                </a>
+            </p>
         </div>
     </div>
 </div>
@@ -502,7 +611,8 @@ server {
         <div class="center aligned column">
             <div class="ui link list">
                 <div class="item" style="color:rgba(40,40,40,.3)">
-                    By <a href="mailto:mrouhi13@gmail.com" title="Contact Email">Majid Rouhi</a> © 2019
+                    By <a href="mailto:mrouhi13@gmail.com"
+                          title="Contact Email">Majid Rouhi</a> © 2019
                 </div>
             </div>
         </div>

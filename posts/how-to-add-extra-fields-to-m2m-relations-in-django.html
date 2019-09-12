@@ -4,80 +4,56 @@
     <!-- Standard Meta -->
     <meta charset=UTF-8>
     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <meta name=viewport
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name=description
-          content="In Django, if you need to create a many-to-many relation you
-           must use `ManyToManyField` for this purpose and Django automatically
-            generate an intermediary model and everything is okay. But what we
-            do if we want to add extra fields to the intermediary model in
-            Django?">
+          content="In Django, if you need to create a many-to-many relation you must use `ManyToManyField` for this purpose and Django automatically generate an intermediary model and everything is okay. But what we do if we want to add extra fields to the intermediary model in Django?">
     <meta name=keywords
-          content="django,python,m2m relation,extra fields,many to many
-          relations in django,django model">
+          content="django,python,m2m relation,extra fields,many to many relations in django,django model">
     <meta name=robots content="index, nofollow">
 
     <!-- Site Properties -->
-    <title>How to add extra fields to M2M relations in Django? | This way, You
-        fools!</title>
+    <title>How to add extra fields to M2M relations in Django? | This way, You fools!</title>
     <link rel=canonical
           href="https://thiswayyoufools.com/posts/how-to-add-extra-fields-to-m2m-relations-in-django.html">
     <link rel=stylesheet type="text/css" href="/static/css/default.min.css">
 
     <!-- Favicon -->
-    <link rel=apple-touch-icon sizes=180x180
-          href="/static/images/favicon/apple-touch-icon.png">
-    <link rel=icon type="image/png" sizes=32x32
-          href="/static/images/favicon/favicon-32x32.png">
-    <link rel=icon type="image/png" sizes=16x16
-          href="/static/images/favicon/favicon-16x16.png">
+    <link rel=apple-touch-icon sizes=180x180 href="/static/images/favicon/apple-touch-icon.png">
+    <link rel=icon type="image/png" sizes=32x32 href="/static/images/favicon/favicon-32x32.png">
+    <link rel=icon type="image/png" sizes=16x16 href="/static/images/favicon/favicon-16x16.png">
     <link rel=manifest href="/static/images/favicon/site.webmanifest">
-    <link rel=mask-icon href="/static/images/favicon/safari-pinned-tab.svg"
-          color=#444444>
+    <link rel=mask-icon href="/static/images/favicon/safari-pinned-tab.svg" color=#444444>
     <link rel="shortcut icon" href="/static/images/favicon/favicon.ico">
     <meta name=apple-mobile-web-app-title content=TWYF>
     <meta name=application-name content=TWYF>
     <meta name=msapplication-TileColor content=#eeeeee>
-    <meta name=msapplication-TileImage
-          content="/static/images/favicons/mstile-144x144.png">
-    <meta name=msapplication-config
-          content="/static/images/favicons/browserconfig.xml">
+    <meta name=msapplication-TileImage content="/static/images/favicons/mstile-144x144.png">
+    <meta name=msapplication-config content="/static/images/favicons/browserconfig.xml">
     <meta name=theme-color content=#eeeeee>
 
     <!-- Opengraph Meta -->
-    <meta property="og:title"
-          content="How to add extra fields to M2M relations in Django?">
+    <meta property="og:title" content="How to add extra fields to M2M relations in Django?">
     <meta property="og:type" content="article">
     <meta property="og:url"
           content="https://thiswayyoufools.com/posts/how-to-add-extra-fields-to-m2m-relations-in-django.html">
     <meta property="og:image"
           content="https://thiswayyoufools.com/static/images/posts/3-steve-harvey-718927-unsplash.jpg">
     <meta property="og:description"
-          content="In Django, if you need to create a many-to-many relation you
-           must use `ManyToManyField` for this purpose and Django automatically
-            generate an intermediary model and everything is okay. But what we
-            do if we want to add extra fields to the intermediary model in
-            Django?">
+          content="In Django, if you need to create a many-to-many relation you must use `ManyToManyField` for this purpose and Django automatically generate an intermediary model and everything is okay. But what we do if we want to add extra fields to the intermediary model in Django?">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Meta -->
     <meta name="twitter:card" content="app">
-    <meta name="twitter:title"
-          content="How to add extra fields to M2M relations in Django?">
+    <meta name="twitter:title" content="How to add extra fields to M2M relations in Django?">
     <meta name="twitter:site" content="@mrouhi13">
     <meta name="twitter:creator" content="@mrouhi13">
     <meta name="twitter:image"
           content="https://thiswayyoufools.com/static/images/posts/3-steve-harvey-718927-unsplash.jpg">
     <meta name="twitter:description"
-          content="In Django, if you need to create a many-to-many relation you
-           must use `ManyToManyField` for this purpose and Django automatically
-            generate an intermediary model and everything is okay. But what we
-            do if we want to add extra fields to the intermediary model in
-            Django?">
+          content="In Django, if you need to create a many-to-many relation you must use `ManyToManyField` for this purpose and Django automatically generate an intermediary model and everything is okay. But what we do if we want to add extra fields to the intermediary model in Django?">
 
     <!-- Article Meta -->
-    <meta property="article:published_time"
-          content="2019-03-21T16:24:00+03:30">
+    <meta property="article:published_time" content="2019-03-21T16:24:00+03:30">
     <meta property="article:author" content="https://twitter.com/mrouhi13">
     <meta property="article:tag" content="django">
     <meta property="article:tag" content="python">
@@ -87,9 +63,7 @@
     <meta property="article:tag" content="django model">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-126660701-3">
-    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126660701-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -103,8 +77,7 @@
 </head>
 <body>
 <!-- Desktop fixed menu -->
-<div id="post-menu" class="ui top fixed text menu desktop"
-     style="background:#fff">
+<div id="post-menu" class="ui top fixed text menu desktop" style="background:#fff">
     <div class="ui container">
         <div class="item header" itemprop=title>This way, You fools!</div>
         <a class="item active" href="/" title="Blog">Blog</a>
@@ -145,18 +118,13 @@
 <!-- Header -->
 <div class="ui container masthead center aligned overlay">
     <div class="page-header">
-        <h1 id="title" class="ui header" itemprop=title>
-            How to add extra fields to M2M relations in Django?
-        </h1>
+        <h1 id="title" class="ui header" itemprop=title>How to add extra fields to M2M relations in Django?</h1>
         <div id="menu" class="ui horizontal link list">
             <div class="item">
-                <i class="calendar alternate outline icon"
-                   style="margin-right:.2em"></i>
-                June 11, 2019
+                <i class="calendar alternate outline icon" style="margin-right:.2em"></i>June 11, 2019
             </div>
             <div class="item">
-                <i class="clock outline icon" style="margin-right:.2em"></i>
-                4 Minutes
+                <i class="clock outline icon" style="margin-right:.2em"></i>4 Minutes
             </div>
         </div>
     </div>
@@ -165,13 +133,11 @@
 <div class="ui image full-width">
     <img src="/static/images/posts/3-steve-harvey-718927-unsplash.jpg"
          alt="How to add extra fields to M2M relations in Django?"
-         title="How to add extra fields to M2M relations in Django?" width=100%
-         height=100%>
+         title="How to add extra fields to M2M relations in Django?" width=100% height=100%>
     <div class="ui link list right floated image-source">
         <p class="ui item">
-            <a href="https://unsplash.com/photos/v1Ur7A-OkYE" itemprop=url>
-                <i class="external alternate small icon"></i>
-                from Unsplash</a>
+            <a href="https://unsplash.com/photos/v1Ur7A-OkYE" itemprop=url><i class="external alternate small icon"></i>from
+                Unsplash</a>
         </p>
     </div>
 </div>
@@ -179,65 +145,42 @@
     <div class="ui image container-width">
         <img src="/static/images/posts/3-steve-harvey-718927-unsplash.jpg"
              alt="How to add extra fields to M2M relations in Django?"
-             title="How to add extra fields to M2M relations in Django?"
-             width=100% height=100%>
+             title="How to add extra fields to M2M relations in Django?" width=100% height=100%>
         <div class="ui link list right floated image-source">
             <p class="ui item">
-                <a href="https://unsplash.com/photos/v1Ur7A-OkYE" itemprop=url>
-                    <i class="external alternate small icon"></i>
-                    from Unsplash
-                </a>
+                <a href="https://unsplash.com/photos/v1Ur7A-OkYE" itemprop=url><i
+                        class="external alternate small icon"></i>from Unsplash</a>
             </p>
         </div>
     </div>
     <div class="post-body">
         <h2 class="ui header">Introduction</h2>
-        <p>
-            In Django, if you need to create a many-to-many relation you must
-            use <code>ManyToManyField</code> for this purpose and Django
-            automatically generate an intermediary model and everything is
-            okay. But what we do if we want to add extra fields to the
-            intermediary model in Django?
-        </p>
+        <p>In Django, if you need to create a many-to-many relation you must use <code>ManyToManyField</code> for this
+            purpose and
+            Django automatically generate an intermediary model and everything is okay. But what we do if we want to add
+            extra fields to the intermediary model in Django?</p>
         <div class="ui section divider"></div>
         <div class="ui visible info small message">
             <div class="header">Note</div>
             <p>This tutorial based on Django 2.*</p>
         </div>
         <h2 class="ui header">What's the problem?</h2>
-        <p>
-            If you have worked with relational databases in your projects
-            certainly familiar with table relations like
-            <em>one-to-many</em>, <em>one-to-one</em> and,
-            <em>many-to-many</em>.
-            Here we will talk about the third one, <em>many-to-many</em>.
-            The M2M relations are made of an intermediate table, which is
-            generally related to the <em>Primary Key (PK)</em>s of the
-            tables involved. If you want directly to design your database, you
-            can easily create required indexes and add PK fields to it and then
-            add extra fields if you need. But in Django, if you need to
-            create a <em>many-to-many</em> relation you must add a
-            <code>ManyToManyField</code> to your model and Django
-            automatically generate an intermediary model and manage the
-            relationship. But what we do if we want to add extra fields to
-            the intermediary model in Django?
-        </p>
+        <p>If you have worked with relational databases in your projects certainly familiar with table relations
+            like <em>one-to-many</em>, <em>one-to-one</em> and, <em>many-to-many</em>. Here we will talk about the third
+            one, <em>many-to-many</em>. The M2M relations are made of an intermediate table, which is generally related
+            to the <em>Primary Key (PK)</em>s of the tables involved. If you want directly to design your database, you
+            can easily create required indexes and add PK fields to it and then add extra fields if you need. But in
+            Django, if you need to create a <em>many-to-many</em> relation you must add a <code>ManyToManyField</code>
+            to your model and Django automatically generate an intermediary model and manage the relationship. But what
+            we do if we want to add extra fields to the intermediary model in Django?</p>
         <h2 class="ui header">How to solve the problem?</h2>
-        <p>
-            Django officially has a simple solution for this situation. Just
-            with one fucking word. Here I try clear this solution with a
-            practical example. Let's go...
-        </p>
+        <p>Django officially has a simple solution for this situation. Just with one fucking word. Here I try clear this
+            solution with a practical example. Let's go...</p>
         <h2 class="ui header">Example:</h2>
-        <p>
-            We have an application that business owners can add their business
-            to it and send a request to their own customer and get feedback.
-            This our <em>models.py</em>:
-        </p>
-        <div class="code-label" data-tooltip="Copy Code"
-             data-position="top right" data-inverted="">models.py <a
-                onclick="copyCode(this)"><i class="copy outline icon"></i></a>
-        </div>
+        <p>We have an application that business owners can add their business to it and send a request to their own
+            customer and get feedback. This our <em>models.py</em>:</p>
+        <div class="code-label" data-tooltip="Copy Code" data-position="top right" data-inverted="">models.py <a
+                onclick="copyCode(this)"><i class="copy outline icon"></i></a></div>
         <pre><code>
 from django.db import models
 from django.contrib.auth.models import User
@@ -275,11 +218,9 @@ class Request(models.Model):
 
     def __str__(self):
         return self.name</code></pre>
-        <p>
-            Look at my M2M relation between <em>Request</em> and
-            <em>Customer</em> model. As I said before, Django automatically
-            creates an intermediary model for this relation. If you want to see
-            what happened exactly run this command:
+        <p>Look at my M2M relation between <em>Request</em> and <em>Customer</em> model. As I said before, Django
+            automatically
+            creates an intermediary model for this relation. If you want to see what happened exactly run this command:
         </p>
         <pre><code><ul class="prefixed">
             <li class="line">./manage.py sqlmigrate my_app 0001_initial</li>
@@ -307,24 +248,16 @@ CREATE INDEX "my_app_request_business_id_bf6497a5" ON "my_app_request" ("busines
 <strong>CREATE INDEX "my_app_request_customer_request_id_3d196cf9" ON "my_app_request_customer" ("request_id");</strong>
 <strong>CREATE INDEX "my_app_request_customer_customer_id_17fb8045" ON "my_app_request_customer" ("customer_id");</strong>
 COMMIT;</code></pre>
-        <p>
-            Look at the three bold lines. This SQL queries exact same rules we
-            need to do in the database if we directly work with database
-            shell. The first one makes <em>Request</em> PK
-            (<code>request_id</code>)
-            and <em>Customer</em> PK (<code>customer_id</code>) unique
-            together index to avoid integrity error. The two next create
-            indexes that create an intermediate table to store records.
-        </p>
-        <p>
-            So far everything is fine. Now we need to save customers feedback
-            per request. The optimized solution is using created the
-            intermediary model to add our extra fields and save data. But how?
-            <code>ManyToManyField</code> has an option named
-            <code>through</code> to specify the Django model that override
-            the automatically generated model. With this option, we can
-            create a new model class and add our extra fields to it.
-        </p>
+        <p>Look at the three bold lines. This SQL queries exact same rules we need to do in the database if we directly
+            work with database shell. The first one makes <em>Request</em> PK (<code>request_id</code>) and
+            <em>Customer</em> PK (<code>customer_id</code>)
+            unique together index to avoid integrity error. The two next create indexes that create an intermediate
+            table to store records.</p>
+        <p>So far everything is fine. Now we need to save customers feedback per request. The optimized solution is
+            using created the intermediary model to add our extra fields and save data. But how?
+            <code>ManyToManyField</code> has an option named <code>through</code> to specify the Django model that
+            override the automatically generated model. With this option, we can create a new model class and add our
+            extra fields to it.</p>
         <p>So we change our models like below:</p>
         <pre><code>
 from django.db import models
@@ -399,35 +332,23 @@ ALTER TABLE "new__my_app_request" RENAME TO "my_app_request";
 <strong>CREATE INDEX "my_app_feedback_request_id_178096e4" ON "my_app_feedback" ("request_id");</strong>
 CREATE INDEX "my_app_request_business_id_bf6497a5" ON "my_app_request" ("business_id");
 COMMIT;</code></pre>
-        <p>
-            As you can see we have the previous three indexes in the new model.
-        </p>
+        <p>As you can see we have the previous three indexes in the new model.</p>
         <p>So we have done!</p>
         <h2>Conclusion:</h2>
-        <p>
-            Having a good understanding of database design is helpful for
-            developers, it can help you in model designing and optimize your
-            queries and product performance and prevents data redundancy in
-            your database. Here you can find some helpful reference to
-            learning database:
-        </p>
+        <p>Having a good understanding of database design is helpful for developers, it can help you in model designing
+            and optimize your queries and product performance and prevents data redundancy in your database. Here you
+            can find some helpful reference to learning database:</p>
+
         <div class="item">
-            <p><a href="https://www.quackit.com/database/tutorial/">Database
+            <p><a href="https://www.quackit.com/database/tutorial/">Database Tutorial</a></p>
+        </div>
+        <div class="item">
+            <p><a href="https://www.webucator.com/tutorial/learn-sql/relational-database-basics.cfm">Relational Database
+                Basics</a></p>
+        </div>
+        <div class="item">
+            <p><a href="https://www.lucidchart.com/pages/database-diagram/database-design">Database Structure and Design
                 Tutorial</a></p>
-        </div>
-        <div class="item">
-            <p>
-                <a href="https://www.webucator.com/tutorial/learn-sql/relational-database-basics.cfm">
-                    Relational Database Basics
-                </a>
-            </p>
-        </div>
-        <div class="item">
-            <p>
-                <a href="https://www.lucidchart.com/pages/database-diagram/database-design">
-                    Database Structure and Design Tutorial
-                </a>
-            </p>
         </div>
     </div>
 </div>
@@ -437,8 +358,7 @@ COMMIT;</code></pre>
         <div class="center aligned column">
             <div class="ui link list">
                 <div class="item" style="color:rgba(40,40,40,.3)">
-                    By <a href="mailto:mrouhi13@gmail.com"
-                          title="Contact Email">Majid Rouhi</a> © 2019
+                    By <a href="mailto:mrouhi13@gmail.com" title="Contact Email">Majid Rouhi</a> © 2019
                 </div>
             </div>
         </div>

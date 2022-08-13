@@ -1,20 +1,28 @@
 module.exports = {
     publicRuntimeConfig: {
         app: {
-            domain: process.env.APP_DOMAIN,
-            title: process.env.APP_TITLE,
-            logo: '/images/logo.svg',
-            imagesDir: '/media/pages/',
-            tags: {
-            },
+            domain: process.env.WEBSITE_DOMAIN,
+            title: process.env.WEBSITE_TITLE,
+            logo: '/assets/logo.png',
             links: {
-                aboutPage: '/about',
-                contactEmail: `mailto:hello@${process.env.APP_DOMAIN}`,
-                twitterAccount: `https://twitter.com/laum-project`,
-                githubRepo: `https://github.com/mrouhi13/laum-project`
+                twitterProfile: `https://twitter.com/mezzotweets`,
+                githubProfile: `https://github.com/mrouhi13`,
+                githubRepo: `https://github.com/mrouhi13/thiswayyoufools`,
+                contactEmail: `mailto:mrouhi13@gmail.com`
             }
         }
     },
     pageExtensions: ['ts', 'tsx'],
-    reactStrictMode: true
+    reactStrictMode: true,
+    experimental: {
+        images: {
+            allowFutureImage: true,
+        },
+    },
+    // webpack: (config, { isServer }) => {
+    //     if (isServer) {
+    //         require('./scripts/generate-sitemap')
+    //     }
+    //     return config
+    // },
 }

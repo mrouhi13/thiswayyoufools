@@ -7,25 +7,25 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'prettier/@typescript-eslint'
+    'prettier/@typescript-eslint',
   ],
   env: {
     es6: true,
     browser: true,
-    node: true
+    node: true,
   },
   parserOptions: {
     project: 'tsconfig.json',
     createDefaultProgram: true,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
   rules: {
     '@typescript-eslint/interface-name-prefix': 'on',
@@ -55,8 +55,8 @@ module.exports = {
         'vars': 'all',
         'args': 'after-used',
         'ignoreRestSiblings': 'off',
-        'argsIgnorePattern': '^_'
-      }
+        'argsIgnorePattern': '^_',
+      },
     ],
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'on',
@@ -68,8 +68,8 @@ module.exports = {
     'no-console': [
       'warn',
       {
-        'allow': ['warn', 'error']
-      }
-    ]
-  }
+        'allow': ['warn', 'error'],
+      },
+    ],
+  },
 }

@@ -1,11 +1,17 @@
 module.exports = {
-    purge: [
+    content: [
         './components/**/*.{js,ts,jsx,tsx}',
         './pages/**/*.{js,ts,jsx,tsx}'
     ],
     darkMode: 'media',
     theme: {
+        container: {
+            center: true
+        },
         extend: {
+            margin: {
+                112: '28rem'
+            },
             fontFamily: {
                 serif: ['Cormorant\\ Infant', 'serif']
             },
@@ -29,14 +35,8 @@ module.exports = {
                 xl: '0.75rem',
                 xxl: '1rem'
             },
-            screens: {
-                xxl: '1600px',
-                xl: '1200px',
-                lg: '992px',
-                md: '768px',
-                sm: '576px',
-                xs: '480px',
-                xxs: { max: '479px' }
+            colors: {
+                'dark': '#121212'
             }
         }
     },
@@ -44,7 +44,5 @@ module.exports = {
         extend: {}
     },
     plugins: [],
-    prefix: 'tw-',
     important: true
 }
-

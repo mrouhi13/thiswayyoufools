@@ -1,7 +1,7 @@
-# This Way You Fools
+# This Way, You Fools
 #### Aug. 2018
 
-This is my personal blog where I try to share my experiences in all interesting topics.
+This is my blog where I try to share my experiences on all interesting topics.
 
 ### A statically generated blog  using Next.js, Markdown, and TypeScript
 

@@ -11,7 +11,7 @@ const ReadMore = ({ slug }: Props) => {
                 as={`/posts/${slug}`}
                 href='/posts/[slug]'
             >
-                <a className='text-base text-gray-400 hover:text-gray-800 duration-300 dark:text-gray-400 dark:hover:text-gray-400'>
+                <a className='text-base text-gray-500 hover:text-gray-800 duration-300 dark:text-gray-400 dark:hover:text-gray-400'>
                     Read more
                 </a>
             </Link>

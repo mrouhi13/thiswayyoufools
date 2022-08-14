@@ -9,7 +9,7 @@ type Props = {
 
 const PostMeta = ({ date, readingTime, author }: Props) => {
     return (
-        <div className='flex justify-between mx-5 my-2 text-base text-gray-400'>
+        <div className='flex justify-between mx-5 my-2 text-base text-gray-500 dark:text-gray-400'>
             <div>
                 <DateFormatter dateString={date}/>
                 <span> / </span>

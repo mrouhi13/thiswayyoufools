@@ -1,0 +1,73 @@
+.markdown {
+    @apply text-lg leading-relaxed font-light;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+    @apply my-6 text-neutral-600;
+}
+
+.markdown h2,
+.markdown h3 {
+    @apply mb-4 leading-snug;
+}
+
+.markdown h2 {
+    @apply text-3xl mt-12;
+}
+
+.markdown h2 code {
+    @apply relative block p-2.5 -mb-5 bg-neutral-200 rounded-b-none text-center text-sm z-10 text-neutral-600;
+}
+
+.markdown h3 {
+    @apply text-2xl mt-8;
+}
+
+.markdown h6 code {
+    @apply block my-0 mt-0 -mb-4 p-4 text-sm text-cyan-600;
+}
+
+.markdown blockquote {
+    @apply px-6 border border-solid border-cyan-300 rounded-lg bg-cyan-50 text-cyan-800;
+}
+
+.markdown blockquote p {
+    @apply my-3;
+}
+
+.markdown blockquote p strong {
+    @apply block;
+}
+
+.markdown a {
+    @apply text-cyan-600 no-underline
+}
+
+.markdown a:hover {
+    @apply text-cyan-700 no-underline
+
+}
+
+.markdown pre {
+    @apply p-4 text-sm overflow-auto rounded-lg bg-neutral-100;
+}
+
+.markdown code {
+    @apply rounded-lg leading-6 text-xs py-1 px-1.5 bg-neutral-100 text-gray-500;
+}
+
+.markdown pre code {
+    @apply p-0 leading-7 text-sm;
+}
+
+.markdown ul li pre {
+    @apply list-none;
+}
+
+.markdown ul li pre code::before {
+    @apply select-none mr-2 text-cyan-600;
+    content: '$';
+}

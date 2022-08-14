@@ -11,7 +11,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
     const image = (
         <Image
             src={src}
-            alt={`Cover Image for ${title}`}
+            alt={title}
             className='shadow-small rounded-xl'
             title={title}
             width={768}

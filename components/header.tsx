@@ -12,7 +12,7 @@ const Header = () => {
                 <div className='pt-6 lg:pt-8 flex justify-between items-center py-6 space-x-10 leading-6 dark:text-white'>
                     <a
                         href='/'
-                        className='flex space-x-3 text-gray-500 dark:text-gray-50'
+                        className='flex space-x-3 text-gray-500'
                     >
                         <Logo/>
                         <h1 className='text-xl font-light leading-8 text-gray-800 dark:text-white'>{publicConfigs.app.title}</h1>

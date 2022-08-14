@@ -39,14 +39,14 @@ const Post = ({ post }: Props) => {
             >
                 {!router.isFallback ? (
                     <article>
+                        <CoverImage
+                            title={post.title}
+                            src={post.coverImage.file}
+                        />
                         <PostMeta
                             date={post.date}
                             author={post.author}
                             readingTime={post.readingTime}
-                        />
-                        <CoverImage
-                            title={post.title}
-                            src={post.coverImage.file}
                         />
                         <PostBody content={post.content}/>
                     </article>

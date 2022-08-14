@@ -12,14 +12,14 @@ const CoverImage = ({ title, src, slug }: Props) => {
         <Image
             src={src}
             alt={`Cover Image for ${title}`}
-            className='shadow-small my-10 rounded-xl'
+            className='shadow-small rounded-xl'
             title={title}
             width={768}
             height={512}
         />
     )
     return (
-        <div className='mx-2'>
+        <div className='mx-2 mt-10 mb-5'>
             {slug ? (
                 <Link
                     as={`/posts/${slug}`}

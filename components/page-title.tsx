@@ -19,7 +19,7 @@ const PageTitle = ({ showBack, children }: Props) => {
                 </a>
             ) : null
             }
-            <h1 className='text-7xl mx-5 my-3 dark:text-white'>
+            <h1 className='text-7xl mx-5 my-3 text-gray-700 dark:text-white'>
                 {children}
             </h1>
         </>

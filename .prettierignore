@@ -1,0 +1,7 @@
+**/node_modules/*
+**/out/*
+**/.next/*
+**/.git/*
+**/.idea/*
+yarn.lock
+package-lock.json

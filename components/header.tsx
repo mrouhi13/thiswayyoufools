@@ -1,6 +1,7 @@
 import getConfig from 'next/config'
 import GithubIcon from 'components/icons/github'
 import TwitterIcon from 'components/icons/twitter'
+import Logo from 'components/logo'
 
 const { publicRuntimeConfig: publicConfigs } = getConfig()
 
@@ -11,15 +12,10 @@ const Header = () => {
                 <div className='pt-6 lg:pt-8 flex justify-between items-center py-6 space-x-10 leading-6 dark:text-white'>
                     <a
                         href='/'
-                        className='flex space-x-3'
+                        className='flex space-x-3 text-gray-500 dark:text-gray-50'
                     >
-                        <img
-                            className='h-8 w-auto'
-                            src={publicConfigs.app.logo}
-                            alt={`${publicConfigs.app.title} logo`}
-                            title={publicConfigs.app.title}
-                        />
-                        <h1 className='text-xl leading-8 text-gray-800 dark:text-white'>{publicConfigs.app.title}</h1>
+                        <Logo/>
+                        <h1 className='text-xl font-light leading-8 text-gray-800 dark:text-white'>{publicConfigs.app.title}</h1>
                     </a>
                     <div className='flex items-center justify-end flex-1 space-x-10'>
                         <div className='flex space-x-4'>

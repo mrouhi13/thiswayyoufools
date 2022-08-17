@@ -17,7 +17,7 @@ const Posts = ({ posts }: Props) => {
             <Head>
                 <title>Posts | {process.env.NEXT_PUBLIC_WEBSITE_TITLE}</title>
             </Head>
-            {posts.map((post) => (
+            {posts.map((post, index) => (
                 <PostPreview
                     key={post.slug}
                     title={post.title}
@@ -27,6 +27,7 @@ const Posts = ({ posts }: Props) => {
                     author={post.author}
                     slug={post.slug}
                     excerpt={post.excerpt}
+                    priority={(index === 0)}
                 />
             ))}
         </Layout>
@@ -43,7 +44,8 @@ export const getStaticProps = async () => {
         'readingTime',
         'excerpt',
         'author',
-        'coverImage'
+        'coverImage',
+        'priority'
     ])
 
     return {

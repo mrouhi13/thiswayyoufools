@@ -38,6 +38,7 @@ const Post = ({ post }: Props) => {
                         <CoverImage
                             title={post.title}
                             src={post.coverImage.file}
+                            priority={true}
                         />
                         <PostMeta
                             date={post.date}

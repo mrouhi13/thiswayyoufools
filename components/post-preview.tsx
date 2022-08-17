@@ -13,7 +13,8 @@ const PostPreview = ({
                          readingTime,
                          excerpt,
                          slug,
-                         author
+                         author,
+                         priority
                      }: Props) => {
     return (
         <article>
@@ -21,6 +22,7 @@ const PostPreview = ({
                 slug={slug}
                 title={title}
                 src={coverImage.file}
+                priority={priority}
             />
             <PostMeta
                 date={date}

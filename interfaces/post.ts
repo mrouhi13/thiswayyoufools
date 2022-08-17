@@ -7,6 +7,7 @@ export interface IPostPreview {
     readingTime: number
     excerpt: string
     author: IAuthor
+    priority: boolean
     coverImage: {
         file: string
         sourceName?: string

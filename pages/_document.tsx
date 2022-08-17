@@ -10,15 +10,14 @@ export default class MyDocument extends Document {
             >
                 <Head>
                     <meta charSet='utf-8'/>
-                    <meta
-                        name='viewport'
-                        content='width=device-width, initial-scale=1, viewport-fit=cover'
-                    />
+                    {/*<meta*/}
+                    {/*    name='viewport'*/}
+                    {/*    content='width=device-width, initial-scale=1, viewport-fit=cover'*/}
+                    {/*/>*/}
                     <meta
                         name='description'
                         content='This is my blog where I try to share my experiences on all interesting topics.'
                     />
-                    <title>{process.env.NEXT_PUBLIC_WEBSITE_TITLE}</title>
 
                     <link
                         rel='icon'
@@ -36,14 +35,15 @@ export default class MyDocument extends Document {
                     ></script>
                     <script
                         dangerouslySetInnerHTML={{
-                            __html: `
-                                    window.dataLayer = window.dataLayer || []
-                                    function gtag(){dataLayer.push(arguments)}
-                                    gtag('js', new Date());
-                                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
-                        `
+                            __html: `window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+                                    ga('create', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', 'auto');
+                                    ga('send', 'pageview');`
                         }}
                     />
+                    <script
+                        async
+                        src='https://www.google-analytics.com/analytics.js'
+                    ></script>
                 </Head>
                 <body>
                 <Main/>

@@ -30,10 +30,6 @@ export default class MyDocument extends Document {
                         href='/assets/favicon/favicon.png'
                     />
                     <script
-                        async
-                        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-                    ></script>
-                    <script
                         dangerouslySetInnerHTML={{
                             __html: `window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
                                     ga('create', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', 'auto');

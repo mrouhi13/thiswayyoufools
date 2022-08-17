@@ -2,7 +2,6 @@ import PostBody from './post-body'
 import CoverImage from './cover-image'
 import PostTitle from './post-title'
 import PostMeta from 'components/post-meta'
-import ReadMore from 'components/read-more'
 import { IPostPreview } from 'interfaces'
 
 type Props = IPostPreview
@@ -33,7 +32,6 @@ const PostPreview = ({
                 title={title}
             />
             <PostBody content={excerpt}/>
-            <ReadMore slug={slug}/>
         </article>
     )
 }

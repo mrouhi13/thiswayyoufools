@@ -1,4 +1,3 @@
-import getConfig from 'next/config'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
 import { useRouter } from 'next/router'
@@ -9,9 +8,6 @@ import CoverImage from 'components/cover-image'
 import markdownToHtml from 'lib/markdownToHtml'
 import { getAllPosts, getPostBySlug } from 'lib/api'
 import { IPost } from 'interfaces'
-
-const { publicRuntimeConfig: publicConfigs } = getConfig()
-
 
 type Props = {
     post: IPost
@@ -26,7 +22,7 @@ const Post = ({ post }: Props) => {
         <>
             <Head>
                 <title>
-                    {post.title} | {publicConfigs.app.title}
+                    {post.title} | {process.env.NEXT_PUBLIC_WEBSITE_TITLE}
                 </title>
                 <meta
                     property='og:image'

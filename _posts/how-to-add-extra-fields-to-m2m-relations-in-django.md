@@ -206,6 +206,6 @@ can help you in model designing and optimize your queries and product
 performance and prevents data redundancy in your database. Here you can find
 some helpful reference to learning database:
 
-[Database Tutorial](https://www.quackit.com/database/tutorial/)\
-[Relational Database Basics](https://www.webucator.com/tutorial/learn-sql/relational-database-basics.cfm)\
-[Database Structure and Design Tutorial](https://www.lucidchart.com/pages/database-diagram/database-design)
+[Database Tutorial](https://www.quackit.com/database/tutorial/ 'Database Tutorial')\
+[Relational Database Basics](https://www.webucator.com/tutorial/learn-sql/relational-database-basics.cfm 'Relational Database Basics')\
+[Database Structure and Design Tutorial](https://www.lucidchart.com/pages/database-diagram/database-design 'Database Structure and Design Tutorial')

@@ -398,6 +398,6 @@ Conclusion
 ----------
 I tried to show a basic tutorial on this post. Of course, most of the steps have more details and as a developer, you should look for hardening, security, performance, SSL certification and etc. This post is very simplified and general to usable for everyone. you can search about the tools we used in this post and find the best solution for your project. I suggest some link below to start:
 
-[Gunicorn official documentation](http://docs.gunicorn.org/en/stable/configure.html)\
-[Supervisor official documentation](http://supervisord.org/running.html)\
-[Nginx SSL configuration](https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38)
+[Gunicorn Official Documentation](http://docs.gunicorn.org/en/stable/configure.html 'Gunicorn Official Documentation')\
+[Supervisor Official Documentation](http://supervisord.org/running.html 'Supervisor Official Documentation')\
+[Nginx SSL Configuration](https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38 'Nginx SSL Configuration')

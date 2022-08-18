@@ -39,7 +39,7 @@ At the beginning we need to prepare our deployment environment, so we should upd
 
 -     adduser eggplant
 
-###### `Output`
+#### `Output`
 
 ```
 Adding user `eggplant' ...
@@ -64,7 +64,7 @@ Is the information correct? [Y/n] y
 
 -     adduser eggplant sudo
 
-###### `Output`
+#### `Output`
 
 ```
 Adding user `eggplant' to group `sudo' ...
@@ -152,7 +152,7 @@ DATABASES = {
 - 
 At this point our project directory like this:
 
-###### `Output`
+#### `Output`
 
 ```
 eggplant/
@@ -184,7 +184,7 @@ eggplant/
 
 -     ./manage.py runserver
 
-###### `Output`
+#### `Output`
 
 
 ```
@@ -293,7 +293,7 @@ Hit _Ctrl + x_ and save file.
 
 -     sudo supervisorctl status eggplant
 
-###### `Output`
+#### `Output`
 
 ```
 eggplant RUNNING pid 30668, uptime 00:00:69

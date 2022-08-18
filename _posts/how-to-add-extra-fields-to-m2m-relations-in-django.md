@@ -83,7 +83,7 @@ want to see what happened exactly run this command:
 
 -     ./manage.py sqlmigrate my_app 0001_initial
 
-###### `Output`
+#### `Output`
 
 ```
 BEGIN;
@@ -167,7 +167,7 @@ Again look at SQL queries:
 
 -     ./manage.py sqlmigrate my_app 0002
 
-###### `Output`
+#### `Output`
 
 ```
 BEGIN;

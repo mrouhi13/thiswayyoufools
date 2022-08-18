@@ -25,6 +25,10 @@ const Post = ({ post }: Props) => {
                     {post.title} | {process.env.NEXT_PUBLIC_WEBSITE_TITLE}
                 </title>
                 <meta
+                    name='description'
+                    content={post.metaDescription}
+                />
+                <meta
                     property='og:image'
                     content={post.ogImage.url}
                 />
@@ -65,14 +69,13 @@ export async function getStaticProps({ params }: Params) {
     const post = getPostBySlug(params.slug, [
         'slug',
         'title',
+        'metaDescription',
         'date',
         'readingTime',
         'content',
-        'excerpt',
         'author',
         'coverImage',
-        'ogImage',
-        'tags'
+        'ogImage'
     ])
     const content = await markdownToHtml(post.content || '')
 

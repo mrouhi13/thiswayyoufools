@@ -1,6 +1,11 @@
 ---
 title: 'How to override error pages in Django?'
-excerpt: 'Customizing error pages in your web application or website is a very useful feature because of giving a good experience to users and let you lead users to the proper page after seeing the error . So let see how to customize these pages in Django projects.'
+metaDescription: 'Customizing error pages in your Django web application or
+website by overriding default variables.'
+excerpt: 'Customizing error pages in your web application or website is a very
+useful feature because of giving a good experience to users and let you lead
+users to the proper page after seeing the error . So let see how to customize
+these pages in Django projects.'
 coverImage:
     file: '/assets/blog/how-to-override-error-pages-in-django/cover.jpg'
     sourceName: 'Unsplash'
@@ -16,7 +21,10 @@ ogImage:
 
 Introduction
 ------------
-Overriding error pages in your web application or web site is a very useful feature because of giving a good experience to users and let you lead users to the proper page after seeing the error also improve your site SEO rate. So let see how to override these pages in Django projects.
+Overriding error pages in your web application or website is a very useful
+feature because of giving a good experience to users and let you lead users to
+the proper page after seeing the error also improve your site SEO rate. So let
+see how to override these pages in Django projects.
 
 ---
 > **Note**
@@ -24,7 +32,11 @@ Overriding error pages in your web application or web site is a very useful feat
 
 Step 1 - Preparing Templates
 ----------------------------
-OK, First of all, we need to create our templates. By default Django serves 4 templates for bad requests (400), permission denied (403), not found (404) and server error (500) errors, so we must override this template to use our customized pages. You can design your pages on your way then put those in this path:
+OK, First, we need to create our templates. By default, Django serves 4
+templates for bad requests (400), permission denied (403), not found (404) and
+server error (500) errors, so we must override this template to use our
+customized pages. You can design your pages on your way then put those in this
+path:
 
 ```
 your_project_root/your_app_name/templates/your_app_name/errors/
@@ -66,11 +78,13 @@ def server_error(request, template_name=ERROR_500_TEMPLATE_NAME):
 . . .
 ```
 
-Django by default define one function for each error and pass the template name to it.
+Django by default define one function for each error and pass the template name
+to it.
 
 Step 3 - Preparing URLs
 -----------------------
-In this step, we must declare our views in _urls.py_ file. In _urls.py_ override default error handlers to use our views.
+In this step, we must declare our views in _urls.py_ file. In _urls.py_
+override default error handlers to use our views.
 
 > **Important note**
 > You must do the alteration in project level URLs.
@@ -95,7 +109,8 @@ handler500 = views.server_error
 
 Step 4 - Preparing Settings
 ---------------------------
-Very well, the last step is to change the settings to see the result. You must deactivate `DEBUG` mode and add your host to `ALLOWED_HOSTS`, so do it:
+Very well, the last step is to change the settings to see the result. You must
+deactivate `DEBUG` mode and add your host to `ALLOWED_HOSTS`, so do it:
 
 `settings.py`
 -------------
@@ -106,8 +121,10 @@ DEBUG = False
 ALLOWED_HOSTS = [‘localhost’, ‘127.0.0.1’]
 ```
 
-OK, for testing the changes, make a fake error, for example, an incorrect URL and see changes.
+OK, for testing the changes, make a fake error, for example, an incorrect URL
+and see changes.
 
 Conclusion
 ----------
-It’s really simple but so important to display proper page to users. It gives a good feeling to them and makes a good user experience.
+It’s really simple but so important to display proper page to users. It gives a
+good feeling to them and makes a good user experience.

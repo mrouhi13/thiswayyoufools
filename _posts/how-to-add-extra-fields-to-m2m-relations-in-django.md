@@ -1,5 +1,7 @@
 ---
 title: 'How to add extra fields to M2M relations in Django?'
+metaDescription: 'Customizing intermediary model for many-to-many relations in 
+Django using the through attribute.'
 excerpt: 'In Django, if you need to create a many-to-many relation you must use
 `ManyToManyField` for this purpose and Django automatically generate an
 intermediary model and everything is okay. But what we do if we want to add
@@ -44,15 +46,16 @@ what we do if we want to add extra fields to the intermediary model in Django?
 How to solve the problem?
 -------------------------
 Django officially has a simple solution for this situation. Just with one
-f\*\*king word. Here I try clear this solution with a practical example. Let's
-go...
+f\*\*king attribute. Here I try clear this solution with a practical example.
+Let's go...
 
 **Example:**
 We have an application that business owners can add their business to it and
-send a request to their own customer and get feedback. This our models.py:
+send a request to their own customer and get feedback. This is our models.py:
 
 `models.py`
 ----------
+
 ```
 from django.db import models
 from django.contrib.auth.models import User
@@ -122,10 +125,10 @@ intermediate table to store records.
 
 So far everything is fine. Now we need to save customers feedback per request.
 The optimized solution is using created the intermediary model to add our extra
-fields and save data. But how? `ManyToManyField` has an option named `through`
-to specify the Django model that override the automatically generated model.
-With this option, we can create a new model class and add our extra fields to
-it.
+fields and save data. But how? `ManyToManyField` has an attribute
+named `through` to specify the Django model that override the automatically
+generated model. With this option, we can create a new model class and add our
+extra fields to it.
 
 So we change our models like below:
 

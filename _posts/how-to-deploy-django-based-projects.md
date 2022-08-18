@@ -1,6 +1,12 @@
 ---
 title: 'How to deploy Django based projects?'
-excerpt: "The world is very wide. Science, too. It's interesting to know that programming is also widespread. Python as a programming language has many orientations. For web development with Python, at this moment where I prepared this post, Django is a great and powerful web framework for this purpose. Let's see how to deploy a Django based project on the server."
+metaDescription: 'Simply deploying Django-based projects using a variety of
+tools and update process on the server.'
+excerpt: "The world is very wide. Science, too. It's interesting to know that
+programming is also widespread. Python as a programming language has many
+orientations. For web development with Python, at this moment where I prepared
+this post, Django is a great and powerful web framework for this purpose. Let's
+see how to deploy a Django based project on the server."
 coverImage:
     file: '/assets/blog/how-to-deploy-django-based-projects/cover.jpg'
     sourceName: 'Unsplash'
@@ -16,10 +22,15 @@ ogImage:
 
 Introduction
 ------------
-The world is very wide. Science, too. It's interesting to know that programming is also widespread. Python as a programming language has many orientations. For web development with Python, at this moment where I prepared this post, Django is a great and powerful web framework for this purpose. Let's see how to deploy a Django based project on the server...
+The world is very wide. Science, too. It's interesting to know that programming
+is also widespread. Python as a programming language has many orientations. For
+web development with Python, at this moment where I prepared this post, Django
+is a great and powerful web framework for this purpose. Let's see how to deploy
+a Django based project on the server...
 
 ---
-For running Django projects on a production/test server we have many tools with different combinations in hand. We use this stack that listed below:
+For running Django projects on a production/test server we have many tools with
+different combinations in hand. We use this stack that listed below:
 
 - Ubuntu 18.04
 - Python 3.6
@@ -33,9 +44,11 @@ For running Django projects on a production/test server we have many tools with 
 
 Step 1 - Preparing Environment
 ------------------------------
-At the beginning we need to prepare our deployment environment, so we should update our OS and install the required packages.
+At the beginning we need to prepare our deployment environment, so we should
+update our OS and install the required packages.
 
-1- First of all we need to create a new user for our project (I used my project name as username, you can use anything else):
+1- First we need to create a new user for our project (I used my project name
+as username, you can use anything else):
 
 -     adduser eggplant
 
@@ -122,10 +135,14 @@ Retrieve project files from the source control and then set up the environment.
 
 -     nano eggplant/settings.py
 
-and fill `SECRET_KEY` value. you can use [Djecrety](https://djecrety.ir) to generate `SECRET_KEY` for your project and then update database section with created user and database.
+and fill `SECRET_KEY` value. you can use [Djecrety](https://djecrety.ir) to
+generate `SECRET_KEY` for your project and then update database section with
+created user and database.
 
 > **Note**
-> In the settings.py file, by default `DEBUG = False`, this means you must set your server IP or domain (if exist) in `ALLOWED_HOST`. You can set `DEBUG = True` if testing on localhost.
+> In the settings.py file, by default `DEBUG = False`, this means you must set
+> your server IP or domain (if exist) in `ALLOWED_HOST`. You can
+> set `DEBUG = True` if testing on localhost.
 
 `eggplants/settings.py`
 -----------------------
@@ -149,7 +166,8 @@ DATABASES = {
 
 -     virtualenv .env --python=python3
 -     source .env/bin/activate
-- 
+-
+
 At this point our project directory like this:
 
 #### `Output`
@@ -171,7 +189,8 @@ eggplant/
 |--- .gitignore
 ```
 
-5- Install the Django package and other dependencies package from _requirement.txt_:
+5- Install the Django package and other dependencies package from _
+requirement.txt_:
 
 -     pip install -r requirements.txt
 
@@ -185,7 +204,6 @@ eggplant/
 -     ./manage.py runserver
 
 #### `Output`
-
 
 ```
 Performing system checks...
@@ -208,7 +226,6 @@ In this step, we must connect gunicorn to project using _wsgi.py_.
 1- Create _gunicorn_start_ file and add configuration:
 
 -     nano .env/bin/gunicorn_start
-
 
 `.env/bin/gunicorn_start`
 -------------------------
@@ -363,11 +380,13 @@ Hit _Ctrl + x_ and save file.
 
 Finally
 -------
-We reboot the server to check everything is okay and all configuration correctly work:
+We reboot the server to check everything is okay and all configuration
+correctly work:
 
 -     sudo reboot
 
-After all these things, check your domain (or IP or localhost if your on a test environment) and you must see something like this:
+After all these things, check your domain (or IP or localhost if your on a test
+environment) and you must see something like this:
 
 ![Final Result!](/assets/blog/how-to-deploy-django-based-projects/final-result.jpg 'Final Result')
 
@@ -396,7 +415,12 @@ For updating our project files using git, we need to take a few steps:
 
 Conclusion
 ----------
-I tried to show a basic tutorial on this post. Of course, most of the steps have more details and as a developer, you should look for hardening, security, performance, SSL certification and etc. This post is very simplified and general to usable for everyone. you can search about the tools we used in this post and find the best solution for your project. I suggest some link below to start:
+I tried to show a basic tutorial on this post. Of course, most of the steps
+have more details and as a developer, you should look for hardening, security,
+performance, SSL certification and etc. This post is very simplified and
+general to usable for everyone. you can search about the tools we used in this
+post and find the best solution for your project. I suggest some link below to
+start:
 
 [Gunicorn Official Documentation](http://docs.gunicorn.org/en/stable/configure.html 'Gunicorn Official Documentation')\
 [Supervisor Official Documentation](http://supervisord.org/running.html 'Supervisor Official Documentation')\

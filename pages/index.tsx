@@ -15,7 +15,11 @@ const Posts = ({ posts }: Props) => {
             showBack={false}
         >
             <Head>
-                <title>Posts | {process.env.NEXT_PUBLIC_WEBSITE_TITLE}</title>
+                <title>{process.env.NEXT_PUBLIC_WEBSITE_TITLE}</title>
+                <meta
+                    name='description'
+                    content='This is my blog where I try to share my experiences on all interesting topics.'
+                />
             </Head>
             {posts.map((post, index) => (
                 <PostPreview

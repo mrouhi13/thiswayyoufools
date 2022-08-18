@@ -8,39 +8,7 @@ export default class MyDocument extends Document {
                 dir='ltr'
                 className='leading-tight'
             >
-                <Head>
-                    <meta charSet='utf-8'/>
-                    {/*<meta*/}
-                    {/*    name='viewport'*/}
-                    {/*    content='width=device-width, initial-scale=1, viewport-fit=cover'*/}
-                    {/*/>*/}
-                    <meta
-                        name='description'
-                        content='This is my blog where I try to share my experiences on all interesting topics.'
-                    />
-
-                    <link
-                        rel='icon'
-                        type='image/svg+xml'
-                        href='/assets/favicon/favicon.svg'
-                    />
-                    <link
-                        rel='icon'
-                        type='image/png'
-                        href='/assets/favicon/favicon.png'
-                    />
-                    <script
-                        dangerouslySetInnerHTML={{
-                            __html: `window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-                                    ga('create', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', 'auto');
-                                    ga('send', 'pageview');`
-                        }}
-                    />
-                    <script
-                        async
-                        src='https://www.google-analytics.com/analytics.js'
-                    ></script>
-                </Head>
+                <Head/>
                 <body>
                 <Main/>
                 <NextScript/>

@@ -1,6 +1,28 @@
+import Head from 'next/head'
 import { AppProps } from 'next/app'
 import '../styles/globals.css'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />
+    return (
+        <>
+            <Head>
+                <meta charSet='utf-8'/>
+                <meta
+                    name='viewport'
+                    content='width=device-width, initial-scale=1, viewport-fit=cover'
+                />
+                <link
+                    rel='icon'
+                    type='image/svg+xml'
+                    href='/assets/favicon/favicon.svg'
+                />
+                <link
+                    rel='icon'
+                    type='image/png'
+                    href='/assets/favicon/favicon.png'
+                />
+            </Head>
+            <Component {...pageProps} />
+        </>
+    )
 }

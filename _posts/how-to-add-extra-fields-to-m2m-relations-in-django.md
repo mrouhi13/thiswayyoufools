@@ -1,11 +1,11 @@
 ---
 title: 'How to add extra fields to M2M relations in Django?'
 metaDescription: 'Customizing intermediary model for many-to-many relations in 
-Django using the through attribute.'
-excerpt: 'In Django, if you need to create a many-to-many relation you must use
+Django uses the through an attribute.'
+excerpt: 'In Django, if you need to create a many-to-many relation, you must use
 `ManyToManyField` for this purpose and Django automatically generate an
-intermediary model and everything is okay. But what we do if we want to add
-extra fields to the intermediary model in Django?'
+intermediary model, and everything is okay. But what do we do to add extra 
+fields to the intermediary model in Django?'
 coverImage:
     file: '/assets/blog/how-to-add-extra-fields-to-m2m-relations-in-django/cover.jpg'
     sourceName: 'Unsplash'
@@ -21,37 +21,37 @@ ogImage:
 
 Introduction
 ------------
-In Django, if you need to create a many-to-many relation you must use
+In Django, if you need to create a many-to-many relation, you must use
 `ManyToManyField` for this purpose and Django automatically generate an
-intermediary model and everything is okay. But what we do if we want to add
-extra fields to the intermediary model in Django?
+intermediary model, and everything is okay. But what do we do to add extra 
+fields to the intermediary model in Django?
 
 ---
 > **Note**
-> This tutorial based on Django 2.\*
+> This tutorial is based on Django 2.\*
 
 What's the problem?
 -------------------
-If you have worked with relational databases in your projects certainly
-familiar with table relations like one-to-many, one-to-one and, many-to-many.
+If you have worked with relational databases in your projects undoubtedly
+familiar with table relations like one-to-many, one-to-one, and many-to-many.
 Here we will talk about the third one, many-to-many. The M2M relations are made
-of an intermediate table, which is generally related to the Primary Key (PK)s
-of the tables involved. If you want directly to design your database, you can
-easily create required indexes and add PK fields to it and then add extra
-fields if you need. But in Django, if you need to create a many-to-many
-relation you must add a `ManyToManyField` to your model and Django
-automatically generate an intermediary model and manage the relationship. But
-what we do if we want to add extra fields to the intermediary model in Django?
+by an intermediate table generally related to the Primary Key (PK)s
+of the tables involved. If you want to design your database directly, you can
+easily create required indexes, add PK fields to it, and add extra
+fields if needed. But in Django, if you need to create a many-to-many
+relation, you must add a `ManyToManyField` to your model, and Django
+automatically generates an intermediary model and manage the relationship. But
+what do we do to add extra fields to the intermediary model in Django?
 
 How to solve the problem?
 -------------------------
 Django officially has a simple solution for this situation. Just with one
-f\*\*king attribute. Here I try clear this solution with a practical example.
+word. Here I clarify this solution with a practical example.
 Let's go...
 
 **Example:**
-We have an application that business owners can add their business to it and
-send a request to their own customer and get feedback. This is our models.py:
+We have an application that business owners can add their business to send a 
+request to their customers and get feedback. This is our models.py:
 
 `models.py`
 ----------
@@ -80,9 +80,9 @@ class Request(models.Model):
     name = models.CharField(max_length=225)
 ```
 
-Look at my M2M relation between Request and Customer model. As I said before,
-Django automatically creates an intermediary model for this relation. If you
-want to see what happened exactly run this command:
+Look at my M2M relation between the Request and Customer model. As I said 
+before, Django automatically creates an intermediary model for this relation. 
+If you want to see what happened precisely, run this command:
 
 -     ./manage.py sqlmigrate my_app 0001_initial
 
@@ -117,18 +117,18 @@ CREATE INDEX "my_app_request_customer_customer_id_17fb8045" ON "my_app_request_c
 COMMIT;
 ```
 
-Look at the three bold lines. This SQL queries exact same rules we need to do
-in the database if we directly work with database shell. The first one makes
-Request PK (`request_id`) and Customer PK (`customer_id`) unique together index
-to avoid integrity error. The two next create indexes that create an
-intermediate table to store records.
+Look at the three bold lines. This SQL queries the same rules we need 
+in the database if we directly work with the database shell. The first one 
+makes Request PK (`request_id`) and Customer PK (`customer_id`) unique 
+together index to avoid integrity error. The two next create indexes that 
+create an intermediate table to store records.
 
-So far everything is fine. Now we need to save customers feedback per request.
-The optimized solution is using created the intermediary model to add our extra
+So far, everything is fine. Now we need to save customer feedback per request.
+The optimized solution created the intermediary model to add extra
 fields and save data. But how? `ManyToManyField` has an attribute
-named `through` to specify the Django model that override the automatically
-generated model. With this option, we can create a new model class and add our
-extra fields to it.
+named `through` to specify the Django model that overrides the automatically
+generated model. This option can create a new model class and add our
+extra fields.
 
 So we change our models like below:
 
@@ -198,16 +198,16 @@ CREATE INDEX "my_app_request_business_id_bf6497a5" ON "my_app_request" ("busines
 COMMIT;
 ```
 
-As you can see we have the previous three indexes in the new model.
+As you can see, we have the previous three indexes in the new model.
 
 So we have done!
 
 Conclusion
 ----------
-Having a good understanding of database design is helpful for developers, it
-can help you in model designing and optimize your queries and product
-performance and prevents data redundancy in your database. Here you can find
-some helpful reference to learning database:
+Having a good understanding of database design is helpful for developers. It
+can help your model design, optimize your queries and product
+performance, and prevent data redundancy in your database. Here you can find
+some helpful references to the learning database:
 
 [Database Tutorial](https://www.quackit.com/database/tutorial/ 'Database Tutorial')\
 [Relational Database Basics](https://www.webucator.com/tutorial/learn-sql/relational-database-basics.cfm 'Relational Database Basics')\

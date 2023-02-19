@@ -1,12 +1,12 @@
 ---
 title: 'How to deploy Django based projects?'
 metaDescription: 'Simply deploying Django-based projects using a variety of
-tools and update process on the server.'
-excerpt: "The world is very wide. Science, too. It's interesting to know that
-programming is also widespread. Python as a programming language has many
-orientations. For web development with Python, at this moment where I prepared
-this post, Django is a great and powerful web framework for this purpose. Let's
-see how to deploy a Django based project on the server."
+tools and update processes on the server.'
+excerpt: "The world is vast. Science, too. It's interesting to know that 
+programming is also widespread. Python, as a programming language, has many 
+orientations. Nowadays, for web development with Python, I think Django is a 
+great and powerful web framework for this purpose. Let's see how to deploy a 
+Django-based project on the server."
 coverImage:
     file: '/assets/blog/how-to-deploy-django-based-projects/cover.jpg'
     sourceName: 'Unsplash'
@@ -22,15 +22,15 @@ ogImage:
 
 Introduction
 ------------
-The world is very wide. Science, too. It's interesting to know that programming
-is also widespread. Python as a programming language has many orientations. For
-web development with Python, at this moment where I prepared this post, Django
-is a great and powerful web framework for this purpose. Let's see how to deploy
-a Django based project on the server...
+The world is vast. Science, too. It's interesting to know that programming is 
+also widespread. Python, as a programming language, has many orientations. 
+Nowadays, for web development with Python, I think Django is a great and 
+powerful web framework for this purpose. Let's see how to deploy a 
+Django-based project on the server.
 
 ---
-For running Django projects on a production/test server we have many tools with
-different combinations in hand. We use this stack that listed below:
+We have many tools with different combinations for running Django projects on 
+a production/test server. We use this stack listed below:
 
 - Ubuntu 18.04
 - Python 3.6
@@ -44,10 +44,10 @@ different combinations in hand. We use this stack that listed below:
 
 Step 1 - Preparing Environment
 ------------------------------
-At the beginning we need to prepare our deployment environment, so we should
+In the beginning, we need to prepare our deployment environment, so we should
 update our OS and install the required packages.
 
-1- First we need to create a new user for our project (I used my project name
+1- First, we need to create a new user for our project (I used my project name
 as username, you can use anything else):
 
 -     adduser eggplant
@@ -85,16 +85,16 @@ Adding user eggplant to group sudo
 Done.
 ```
 
-3- Switch to new user shell:
+3- Switch to the new user shell:
 
 -     su - eggplant
 
-4- Now, we need upgrade our Ubuntu packages:
+4- Now, we need to upgrade our Ubuntu packages:
 
 -     sudo apt update
 -     sudo apt upgrade
 
-5- Next, to running our project we need to install some packages:
+5- Next, to run our project, we need to install some packages:
 
 -     sudo apt install nginx postgresql python3-pip virtualenv supervisor
 
@@ -102,7 +102,7 @@ Step 2 - Preparing PostgreSQL
 -----------------------------
 In this step, we create a user and database for our project.
 
-1- Switch to postgres shell:
+1- Switch to Postgres shell:
 
 -     sudo -iu postgres
 
@@ -114,7 +114,7 @@ In this step, we create a user and database for our project.
 
 -     createdb --owner eggplant_user eggplant
 
-4- Exit from postgres shell:
+4- Exit from Postgres shell:
 
 -     exit
 
@@ -122,11 +122,11 @@ Step 3 - Clone and Setup Project
 --------------------------------
 Retrieve project files from the source control and then set up the environment.
 
-1- Clone project (In this case I used Github):
+1- Clone project (In this case, I used Github):
 
 -     git clone https://github.com/mrouhi13/eggplant.git
 
-2- Create settings file from sample:
+2- Create a settings file from the sample:
 
 -     cd eggplant
 -     cp eggplant/settings.py.sample eggplant/settings.py
@@ -135,13 +135,13 @@ Retrieve project files from the source control and then set up the environment.
 
 -     nano eggplant/settings.py
 
-and fill `SECRET_KEY` value. you can use [Djecrety](https://djecrety.ir) to
-generate `SECRET_KEY` for your project and then update database section with
-created user and database.
+And fill in the `SECRET_KEY` value. you can use 
+[Djecrety](https://djecrety.ir) to generate `SECRET_KEY` for your project and 
+then update the database section with created user and database.
 
 > **Note**
-> In the settings.py file, by default `DEBUG = False`, this means you must set
-> your server IP or domain (if exist) in `ALLOWED_HOST`. You can
+> In the settings.py file, by default, `DEBUG = False`; so you must set
+> your server IP or domain (if it exists) in `ALLOWED_HOST`. You can
 > set `DEBUG = True` if testing on localhost.
 
 `eggplants/settings.py`
@@ -168,7 +168,7 @@ DATABASES = {
 -     source .env/bin/activate
 -
 
-At this point our project directory like this:
+At this point, our project directory is like this:
 
 #### `Output`
 
@@ -199,7 +199,7 @@ requirement.txt_:
 -     ./manage.py migrate
 -     ./manage.py collectstatic
 
-7- At last, run server for testing everything is okay:
+7- At last, run the server to test that everything is okay:
 
 -     ./manage.py runserver
 
@@ -218,7 +218,7 @@ Hit _Ctrl + c_ to exit.
 
 Step 4 - Preparing Gunicorn
 ---------------------------
-In this step, we must connect gunicorn to project using _wsgi.py_.
+In this step, we must connect gunicorn to the project using _wsgi.py_.
 
 > **Note**
 > Gunicorn package installed with _requirements.txt_.
@@ -258,17 +258,17 @@ exec .env/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
 --log-file=-
 ```
 
-Hit _Ctrl + x_ and save file.
+Hit _Ctrl + x_ and save the file.
 
 2- Add execute permission to _gunicorn_start_:
 
 -     chmod u+x .env/bin/gunicorn_start
 
-3- Make run directory for Unix socket file:
+3- Make a run directory for the Unix socket file:
 
 -     mkdir .env/run
 
-4- Make logs directory and gunicorn log file:
+4- Make a logs directory and gunicorn log file:
 
 -     mkdir .env/logs
 -     touch .env/logs/gunicorn-error.log
@@ -277,7 +277,7 @@ Step 5 - Preparing Supervisor
 -----------------------------
 We use the supervisor to ensure our project always is running.
 
-1- First start and enable supervisor service:
+1- The first start and enable supervisor service:
 
 -     sudo systemctl enable supervisor
 -     sudo systemctl start supervisor
@@ -299,7 +299,7 @@ redirect_stderr=true
 stdout_logfile=/home/eggplant/eggplant/.env/logs/gunicorn-error.log
 ```
 
-Hit _Ctrl + x_ and save file.
+Hit _Ctrl + x_ and save the file.
 
 3- Update supervisor service to read the new configuration file:
 
@@ -318,9 +318,10 @@ eggplant RUNNING pid 30668, uptime 00:00:69
 
 Step 6 - Preparing Nginx
 ------------------------
-Now we config webserver to publish our project to the internet.
+Now we config a web server to publish our project to the internet.
 
-1- First remove default config symlink and then enable and start nginx service:
+1- First remove the default config symlink and then enable and start nginx 
+service:
 
 -     sudo rm /etc/nginx/sites-enabled/default
 -     sudo systemctl start nginx
@@ -368,9 +369,9 @@ server {
 }
 ```
 
-Hit _Ctrl + x_ and save file.
+Hit _Ctrl + x_ and save the file.
 
-3- Create symlink for configuration file:
+3- Create a symlink for the configuration file:
 
 -     sudo ln -s /etc/nginx/sites-available/eggplant /etc/nginx/sites-enabled/eggplant
 
@@ -380,13 +381,13 @@ Hit _Ctrl + x_ and save file.
 
 Finally
 -------
-We reboot the server to check everything is okay and all configuration
+We reboot the server to check everything is okay and that all configuration
 correctly work:
 
 -     sudo reboot
 
-After all these things, check your domain (or IP or localhost if your on a test
-environment) and you must see something like this:
+After all these things, check your domain (localhost), and you must see 
+something like this:
 
 ![Final Result!](/assets/blog/how-to-deploy-django-based-projects/final-result.jpg 'Final Result')
 
@@ -403,23 +404,23 @@ For updating our project files using git, we need to take a few steps:
 
 -     git pull origin master
 
-3- And then, do migration and collect static files updates:
+3- And then, migrate and collect static files updates:
 
 -     ./manage.py migrate
 -     ./manage.py collectstatic
 
-4- In the end restart project and exit:
+4- In the end, restart project and exit:
 
 -     sudo supervisorctl restart eggplant
 -     exit
 
 Conclusion
 ----------
-I tried to show a basic tutorial on this post. Of course, most of the steps
-have more details and as a developer, you should look for hardening, security,
-performance, SSL certification and etc. This post is very simplified and
-general to usable for everyone. you can search about the tools we used in this
-post and find the best solution for your project. I suggest some link below to
+I tried to show a basic tutorial in this post. Of course, most of the steps
+have more details, and as a developer, you should look for hardening, security,
+performance, SSL certification, etc. This post is very simplified and
+general to be usable for everyone. You can search for the tools we used in this
+post and find the best solution for your project. I suggest some links below to
 start:
 
 [Gunicorn Official Documentation](http://docs.gunicorn.org/en/stable/configure.html 'Gunicorn Official Documentation')\

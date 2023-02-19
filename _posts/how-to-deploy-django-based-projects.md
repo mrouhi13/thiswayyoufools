@@ -1,7 +1,7 @@
 ---
 title: 'How to deploy Django based projects?'
 metaDescription: 'Simply deploying Django-based projects using a variety of
-tools and update process on the server.'
+tools and update processes on the server.'
 excerpt: "The world is vast. Science, too. It's interesting to know that 
 programming is also widespread. Python, as a programming language, has many 
 orientations. Nowadays, for web development with Python, I think Django is a 

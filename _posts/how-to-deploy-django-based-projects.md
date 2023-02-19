@@ -218,7 +218,7 @@ Hit _Ctrl + c_ to exit.
 
 Step 4 - Preparing Gunicorn
 ---------------------------
-In this step, we must connect Gunicorn to the project using _wsgi.py_.
+In this step, we must connect gunicorn to the project using _wsgi.py_.
 
 > **Note**
 > Gunicorn package installed with _requirements.txt_.
@@ -268,7 +268,7 @@ Hit _Ctrl + x_ and save the file.
 
 -     mkdir .env/run
 
-4- Make a logs directory and Gunicorn log file:
+4- Make a logs directory and gunicorn log file:
 
 -     mkdir .env/logs
 -     touch .env/logs/gunicorn-error.log
@@ -320,7 +320,7 @@ Step 6 - Preparing Nginx
 ------------------------
 Now we config a web server to publish our project to the internet.
 
-1- First remove the default config symlink and then enable and start the Nginx 
+1- First remove the default config symlink and then enable and start nginx 
 service:
 
 -     sudo rm /etc/nginx/sites-enabled/default
@@ -375,7 +375,7 @@ Hit _Ctrl + x_ and save the file.
 
 -     sudo ln -s /etc/nginx/sites-available/eggplant /etc/nginx/sites-enabled/eggplant
 
-4- Restart the Nginx service:
+4- Restart nginx service:
 
 -     sudo systemctl restart nginx
 

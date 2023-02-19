@@ -4,7 +4,7 @@ metaDescription: 'Customizing error pages in your Django web application or
 website by overriding default variables.'
 excerpt: 'Customizing error pages in your web application or website is a 
 handy feature because of giving an excellent experience to users and let you 
-lead users to the right page after seeing the error. So let\'s see how to 
+lead users to the right page after seeing the error. So lets see how to 
 override these pages in Django projects.'
 coverImage:
     file: '/assets/blog/how-to-override-error-pages-in-django/cover.jpg'

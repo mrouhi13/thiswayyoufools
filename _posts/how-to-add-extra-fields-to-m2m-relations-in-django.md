@@ -43,7 +43,6 @@ relation, you must add a `ManyToManyField` to your model, and Django
 automatically generates an intermediary model and manage the relationship. But
 what do we do to add extra fields to the intermediary model in Django?
 
-
 How to solve the problem?
 -------------------------
 Django officially has a simple solution for this situation. Just with one

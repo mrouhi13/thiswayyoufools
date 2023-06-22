@@ -320,6 +320,11 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"
   integrity sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==
 
+"@vercel/analytics@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-1.0.1.tgz#38308a626c91866cb00a249c08bf65251e9b9d81"
+  integrity sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==
+
 acorn-node@^1.8.2:
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/acorn-node/-/acorn-node-1.8.2.tgz#114c95d64539e53dede23de8b9d96df7c7ae2af8"
@@ -2138,13 +2143,6 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-remark-css-selectors@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-css-selectors/-/remark-css-selectors-1.0.1.tgz#a5ba1c5da6830e73c57146fe32cf5e1d1c7ca8a4"
-  integrity sha512-kFFBC3BAeGt1F5dqph8CwnIMpCBdw31DtskAVQE0mwEW54KU2trhy3N8OD3bzqhiwBl/XFNN0AAmnZ1dcz1Fhg==
-  dependencies:
-    unist-util-filter "^2.0.2"
-
 remark-html@^15.0.1:
   version "15.0.1"
   resolved "https://registry.yarnpkg.com/remark-html/-/remark-html-15.0.1.tgz#199cc78656d857834de0304c4b54a773f3272078"
@@ -2566,22 +2564,10 @@ unist-builder@^3.0.0:
   dependencies:
     "@types/unist" "^2.0.0"
 
-unist-util-filter@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/unist-util-filter/-/unist-util-filter-2.0.3.tgz#558cf866016f0e7ade1e30ef190abf253111dd39"
-  integrity sha512-8k6Jl/KLFqIRTHydJlHh6+uFgqYHq66pV75pZgr1JwfyFSjbWb12yfb0yitW/0TbHXjr9U4G9BQpOvMANB+ExA==
-  dependencies:
-    unist-util-is "^4.0.0"
-
 unist-util-generated@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/unist-util-generated/-/unist-util-generated-2.0.0.tgz#86fafb77eb6ce9bfa6b663c3f5ad4f8e56a60113"
   integrity sha512-TiWE6DVtVe7Ye2QxOVW9kqybs6cZexNwTwSMVgkfjEReqy/xwGpAXb99OxktoWwmL+Z+Epb0Dn8/GNDYP1wnUw==
-
-unist-util-is@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/unist-util-is/-/unist-util-is-4.1.0.tgz#976e5f462a7a5de73d94b706bac1b90671b57797"
-  integrity sha512-ZOQSsnce92GrxSqlnEEseX0gi7GH9zTJZ0p9dtu87WRb/37mMPO2Ilx1s/t9vBHrFhbgweUwb+t7cIn5dxPhZg==
 
 unist-util-is@^5.0.0:
   version "5.1.1"

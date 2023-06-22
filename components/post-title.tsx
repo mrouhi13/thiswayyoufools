@@ -1,21 +1,21 @@
 import Link from 'next/link'
 
 type Props = {
-    slug: string
-    title: string
+  slug: string
+  title: string
 }
 
 const PostTitle = ({ slug, title }: Props) => {
-    return (
-        <h2 className='text-3xl mx-5 dark:text-white'>
-            <Link
-                as={`/posts/${slug}`}
-                href='/posts/[slug]'
-            >
-                <a>{title}</a>
-            </Link>
-        </h2>
-    )
+  return (
+    <h2 className="text-3xl mx-5 dark:text-white">
+      <Link
+        as={`/posts/${slug}`}
+        href="/posts/[slug]"
+      >
+        <a>{title}</a>
+      </Link>
+    </h2>
+  )
 }
 
 export default PostTitle

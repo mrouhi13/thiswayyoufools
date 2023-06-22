@@ -7,35 +7,35 @@ import { IPostPreview } from 'interfaces'
 type Props = IPostPreview
 
 const PostPreview = ({
-                         title,
-                         coverImage,
-                         date,
-                         readingTime,
-                         excerpt,
-                         slug,
-                         author,
-                         priority
+                       title,
+                       coverImage,
+                       date,
+                       readingTime,
+                       excerpt,
+                       slug,
+                       author,
+                       priority
                      }: Props) => {
-    return (
-        <article>
-            <CoverImage
-                slug={slug}
-                title={title}
-                src={coverImage.file}
-                priority={priority}
-            />
-            <PostMeta
-                date={date}
-                author={author}
-                readingTime={readingTime}
-            />
-            <PostTitle
-                slug={slug}
-                title={title}
-            />
-            <PostBody content={excerpt}/>
-        </article>
-    )
+  return (
+    <article>
+      <CoverImage
+        slug={slug}
+        title={title}
+        src={coverImage.file}
+        priority={priority}
+      />
+      <PostMeta
+        date={date}
+        author={author}
+        readingTime={readingTime}
+      />
+      <PostTitle
+        slug={slug}
+        title={title}
+      />
+      <PostBody content={excerpt}/>
+    </article>
+  )
 }
 
 export default PostPreview

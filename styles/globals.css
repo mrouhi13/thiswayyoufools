@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 #__next {
-    @apply flex flex-col min-h-screen bg-white font-serif;
+  @apply flex flex-col min-h-screen bg-white font-serif;
 }

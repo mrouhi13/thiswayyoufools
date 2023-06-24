@@ -109,6 +109,7 @@ typings/
 
 # TypeScript cache
 *.tsbuildinfo
+next-env.d.ts
 
 # Optional npm cache directory
 .npm
@@ -383,3 +384,9 @@ modules.xml
 
 # vercel
 .vercel
+
+# testing
+/coverage
+
+# next.js
+/.next/

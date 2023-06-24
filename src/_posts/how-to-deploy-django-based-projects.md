@@ -389,7 +389,7 @@ correctly work:
 After all these things, check your domain (localhost), and you must see 
 something like this:
 
-![Final Result!](/assets/blog/how-to-deploy-django-based-projects/final-result.jpg 'Final Result')
+![Final Result!](/assets/blog/how-to-deploy-django-based-projects/final-result.png 'Final Result')
 
 How to update our project?
 --------------------------

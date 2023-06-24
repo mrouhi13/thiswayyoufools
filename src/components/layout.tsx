@@ -15,6 +15,7 @@ export default function Layout({ pageTitle, showBack, children }: Props) {
     <div className="dark:bg-dark">
       <Header/>
       <Script
+        id="ga"
         dangerouslySetInnerHTML={{
           __html: `window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
                             ga('create', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', 'auto');

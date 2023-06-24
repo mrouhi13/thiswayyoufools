@@ -28,7 +28,7 @@ fields to the intermediary model in Django?
 
 ---
 > **Note**
-> This tutorial is based on Django 2.\*
+> This tutorial is based on Django 2.*
 
 What's the problem?
 -------------------

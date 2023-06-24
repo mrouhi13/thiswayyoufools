@@ -4,7 +4,7 @@ type Props = {
   dateString: string
 }
 
-const DateFormatter = ({ dateString }: Props) => {
+export default function DateFormatter({ dateString }: Props) {
   const date = parseISO(dateString)
   return <time
     dateTime={dateString}
@@ -13,5 +13,3 @@ const DateFormatter = ({ dateString }: Props) => {
     {format(date, 'LLLL d, yyyy')}
   </time>
 }
-
-export default DateFormatter

@@ -1,4 +1,4 @@
-import Image from 'next/future/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
   priority?: boolean
 }
 
-const CoverImage = ({ title, src, slug, priority }: Props) => {
+export default function CoverImage({ title, src, slug, priority }: Props) {
   const image = (
     <Image
       src={src}
@@ -27,8 +27,8 @@ const CoverImage = ({ title, src, slug, priority }: Props) => {
         <Link
           as={`/posts/${slug}`}
           href="/posts/[slug]"
-        >
-          <a aria-label={title}>{image}</a>
+          aria-label={title}
+        >{image}
         </Link>
       ) : (
         image
@@ -36,5 +36,3 @@ const CoverImage = ({ title, src, slug, priority }: Props) => {
     </div>
   )
 }
-
-export default CoverImage

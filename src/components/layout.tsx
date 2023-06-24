@@ -1,7 +1,7 @@
 import React from 'react'
-import Footer from 'components/footer'
-import Header from 'components/header'
-import PageTitle from 'components/page-title'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+import PageTitle from '@/components/page-title'
 import Script from 'next/script'
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
   children: React.ReactNode
 }
 
-const Layout = ({ pageTitle, showBack, children }: Props) => {
+export default function Layout({ pageTitle, showBack, children }: Props) {
   return (
     <div className="dark:bg-dark">
       <Header/>
@@ -33,5 +33,3 @@ const Layout = ({ pageTitle, showBack, children }: Props) => {
     </div>
   )
 }
-
-export default Layout

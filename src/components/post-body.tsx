@@ -5,7 +5,7 @@ type Props = {
   content: string
 }
 
-const PostBody = ({ content }: Props) => {
+export default function PostBody({ content }: Props) {
   return (
     <div
       className={cn(markdownStyles['markdown'], 'm-5 text-gray-800 dark:text-gray-100')}
@@ -13,5 +13,3 @@ const PostBody = ({ content }: Props) => {
     />
   )
 }
-
-export default PostBody

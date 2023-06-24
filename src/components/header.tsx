@@ -1,8 +1,8 @@
-import GithubIcon from 'components/icons/github'
-import TwitterIcon from 'components/icons/twitter'
-import Logo from 'components/logo'
+import GithubIcon from '@/components/icons/github'
+import TwitterIcon from '@/components/icons/twitter'
+import Logo from '@/components/logo'
 
-const Header = () => {
+export default function Header() {
   return (
     <header className="relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -29,6 +29,3 @@ const Header = () => {
     </header>
   )
 }
-
-
-export default Header

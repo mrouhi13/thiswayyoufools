@@ -1,19 +1,19 @@
 import Head from 'next/head'
 import ErrorPage from 'next/error'
 import { useRouter } from 'next/router'
-import Layout from 'components/layout'
-import PostBody from 'components/post-body'
-import PostMeta from 'components/post-meta'
-import CoverImage from 'components/cover-image'
-import markdownToHtml from 'lib/markdownToHtml'
-import { getAllPosts, getPostBySlug } from 'lib/api'
-import { IPost } from 'interfaces'
+import Layout from '@/components/layout'
+import PostBody from '@/components/post-body'
+import PostMeta from '@/components/post-meta'
+import CoverImage from '@/components/cover-image'
+import markdownToHtml from '@/lib/markdownToHtml'
+import { getAllPosts, getPostBySlug } from '@/lib/api'
+import { IPost } from '@/interfaces'
 
 type Props = {
   post: IPost
 }
 
-const Post = ({ post }: Props) => {
+export default function Post({ post }: Props) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404}/>
@@ -56,8 +56,6 @@ const Post = ({ post }: Props) => {
     </>
   )
 }
-
-export default Post
 
 type Params = {
   params: {

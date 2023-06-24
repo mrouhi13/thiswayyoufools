@@ -1,4 +1,4 @@
-import { IAuthor } from './author'
+import { IAuthor } from '@/interfaces/author'
 
 export interface IPostPreview {
   slug: string

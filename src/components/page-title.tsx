@@ -1,12 +1,12 @@
 import { ReactNode } from 'react'
-import BackIcon from 'components/icons/back'
+import BackIcon from '@/components/icons/back'
 
 type Props = {
   showBack: boolean
   children?: ReactNode
 }
 
-const PageTitle = ({ showBack, children }: Props) => {
+export default function PageTitle({ showBack, children }: Props) {
   return (
     <>
       {showBack ? (
@@ -25,5 +25,3 @@ const PageTitle = ({ showBack, children }: Props) => {
     </>
   )
 }
-
-export default PageTitle

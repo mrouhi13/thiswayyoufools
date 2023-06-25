@@ -18,7 +18,5 @@ export interface IPostPreview {
 export interface IPost extends IPostPreview {
   metaDescription: string
   content: string
-  ogImage: {
-    url: string
-  }
+  canonicalUrl?: string
 }

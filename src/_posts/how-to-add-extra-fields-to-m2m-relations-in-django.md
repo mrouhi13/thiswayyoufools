@@ -7,7 +7,7 @@ excerpt: 'In Django, if you need to create a many-to-many relation, you must use
 intermediary model, and everything is okay. But what do we do to add extra 
 fields to the intermediary model in Django?'
 coverImage:
-    file: '/assets/blog/how-to-add-extra-fields-to-m2m-relations-in-django/cover.jpg'
+    file: '/blog/how-to-add-extra-fields-to-m2m-relations-in-django/cover.jpg'
     sourceName: 'Unsplash'
     sourceUrl: 'https://unsplash.com/photos/v1Ur7A-OkYE'
 date: '2019-06-11T13:51:31.322Z'
@@ -15,8 +15,7 @@ readingTime: '4 Minutes'
 author:
     name: 'Majid'
     picture: ''
-ogImage:
-    url: '/assets/blog/how-to-add-extra-fields-to-m2m-relations-in-django/cover.jpg'
+canonicalUrl: ''
 ---
 
 Introduction

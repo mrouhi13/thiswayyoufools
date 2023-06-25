@@ -7,7 +7,7 @@ handy feature because of giving an excellent experience to users and let you
 lead users to the right page after seeing the error. So lets see how to 
 override these pages in Django projects.'
 coverImage:
-    file: '/assets/blog/how-to-override-error-pages-in-django/cover.jpg'
+    file: '/blog/how-to-override-error-pages-in-django/cover.jpg'
     sourceName: 'Unsplash'
     sourceUrl: 'https://unsplash.com/photos/4POdKVRh_Lo'
 date: '2019-03-21T09:23:01.322Z'
@@ -15,8 +15,7 @@ readingTime: '2 Minutes'
 author:
   name: 'Majid'
   picture: ''
-ogImage:
-  url: '/assets/blog/how-to-override-error-pages-in-django/cover.jpg'
+canonicalUrl: ''
 ---
 
 Introduction

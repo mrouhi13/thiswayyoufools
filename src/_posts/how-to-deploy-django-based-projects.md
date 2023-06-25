@@ -8,7 +8,7 @@ orientations. Nowadays, for web development with Python, I think Django is a
 great and powerful web framework for this purpose. Let's see how to deploy a 
 Django-based project on the server."
 coverImage:
-    file: '/assets/blog/how-to-deploy-django-based-projects/cover.jpg'
+    file: '/blog/how-to-deploy-django-based-projects/cover.jpg'
     sourceName: 'Unsplash'
     sourceUrl: 'https://unsplash.com/photos/ogJNR_jhxS8'
 date: '2019-02-02T17:35:07.322Z'
@@ -16,8 +16,7 @@ readingTime: '5 Minutes'
 author:
   name: 'Majid'
   picture: ''
-ogImage:
-  url: '/assets/blog/how-to-deploy-django-based-projects/cover.jpg'
+canonicalUrl: ''
 ---
 
 Introduction
@@ -389,7 +388,7 @@ correctly work:
 After all these things, check your domain (localhost), and you must see 
 something like this:
 
-![Final Result!](/assets/blog/how-to-deploy-django-based-projects/final-result.png 'Final Result')
+![Final Result!](/blog/how-to-deploy-django-based-projects/final-result.png 'Final Result')
 
 How to update our project?
 --------------------------

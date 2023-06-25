@@ -1,2 +1,2 @@
-export * from './post'
-export * from './author'
+export * from '@/interfaces/author'
+export * from '@/interfaces/post'

@@ -1,6 +1,6 @@
-import PostBody from './post-body'
-import CoverImage from './cover-image'
-import PostTitle from './post-title'
+import PostBody from '@/components/post-body'
+import CoverImage from '@/components/cover-image'
+import PostTitle from '@/components/post-title'
 import PostMeta from '@/components/post-meta'
 import { IPostPreview } from '@/interfaces'
 

@@ -13,7 +13,7 @@ coverImage:
 date: '2019-06-11T13:51:31.322Z'
 readingTime: '4 Minutes'
 author:
-    name: 'Majid'
+    name: 'Majid.'
     picture: ''
 canonicalUrl: ''
 ---

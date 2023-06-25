@@ -29,6 +29,34 @@ export default function Post({ post }: Props) {
           content={post.metaDescription}
         />
         <meta
+          property="twitter:title"
+          content={post.title}
+        />
+        <meta
+          property="twitter:description"
+          content={post.metaDescription}
+        />
+        <meta
+          property="twitter:image"
+          content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/og/?title=${post.title}&author=${post.author.name}`}
+        />
+        <meta
+          property="twitter:card"
+          content="summary_large_image"
+        />
+        <meta
+          property="og:title"
+          content={post.title}
+        />
+        <meta
+          property="og:description"
+          content={post.metaDescription}
+        />
+        <meta
+          property="og:url"
+          content={post.canonicalUrl}
+        />
+        <meta
           property="og:image"
           content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/og/?title=${post.title}&author=${post.author.name}`}
         />

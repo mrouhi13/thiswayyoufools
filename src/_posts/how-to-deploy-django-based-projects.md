@@ -422,6 +422,6 @@ general to be usable for everyone. You can search for the tools we used in this
 post and find the best solution for your project. I suggest some links below to
 start:
 
-[Gunicorn Official Documentation](http://docs.gunicorn.org/en/stable/configure.html 'Gunicorn Official Documentation')\
-[Supervisor Official Documentation](http://supervisord.org/running.html 'Supervisor Official Documentation')\
-[Nginx SSL Configuration](https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38 'Nginx SSL Configuration')
+[→ Gunicorn Official Documentation](http://docs.gunicorn.org/en/stable/configure.html 'Gunicorn Official Documentation')\
+[→ Supervisor Official Documentation](http://supervisord.org/running.html 'Supervisor Official Documentation')\
+[→ Nginx SSL Configuration](https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38 'Nginx SSL Configuration')

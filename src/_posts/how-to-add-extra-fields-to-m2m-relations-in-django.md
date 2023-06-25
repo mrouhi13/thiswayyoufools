@@ -208,6 +208,6 @@ can help your model design, optimize your queries and product
 performance, and prevent data redundancy in your database. Here you can find
 some helpful references to the learning database:
 
-[Database Tutorial](https://www.quackit.com/database/tutorial/ 'Database Tutorial')\
-[Relational Database Basics](https://www.webucator.com/tutorial/learn-sql/relational-database-basics.cfm 'Relational Database Basics')\
-[Database Structure and Design Tutorial](https://www.lucidchart.com/pages/database-diagram/database-design 'Database Structure and Design Tutorial')
+[→ Database Tutorial](https://www.quackit.com/database/tutorial/ 'Database Tutorial')\
+[→ Relational Database Basics](https://www.webucator.com/tutorial/learn-sql/relational-database-basics.cfm 'Relational Database Basics')\
+[→ Database Structure and Design Tutorial](https://www.lucidchart.com/pages/database-diagram/database-design 'Database Structure and Design Tutorial')

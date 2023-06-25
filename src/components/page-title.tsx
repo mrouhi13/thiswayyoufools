@@ -20,7 +20,7 @@ export default function PageTitle({ showBack, children }: Props) {
         </Link>
       ) : null
       }
-      <h1 className="text-7xl mx-5 my-3 text-gray-700 dark:text-white">
+      <h1 className={`${showBack ? 'text-6xl' : 'text-7xl'} mx-5 my-3 text-gray-700 dark:text-white`}>
         {children}
       </h1>
     </>

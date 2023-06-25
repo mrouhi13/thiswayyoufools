@@ -5,20 +5,57 @@ import { getAllPosts } from '@/lib/api'
 import { IPost } from '@/interfaces'
 
 type Props = {
+  pageMeta: {
+    title: string
+    description: string
+    canonicalUrl?: string
+  }
   posts: IPost[]
 }
 
-export default function Posts({ posts }: Props) {
+export default function Posts({ pageMeta, posts }: Props) {
   return (
     <Layout
-      pageTitle="Blog"
+      pageTitle={pageMeta.title}
       showBack={false}
     >
       <Head>
         <title>{process.env.NEXT_PUBLIC_WEBSITE_TITLE}</title>
         <meta
           name="description"
-          content="This is my blog where I try to share my experiences on all interesting topics."
+          content={pageMeta.description}
+        />
+        <meta
+          property="twitter:title"
+          content={pageMeta.title}
+        />
+        <meta
+          property="twitter:description"
+          content={pageMeta.description}
+        />
+        <meta
+          property="twitter:image"
+          content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/og`}
+        />
+        <meta
+          property="twitter:card"
+          content="summary_large_image"
+        />
+        <meta
+          property="og:title"
+          content={pageMeta.title}
+        />
+        <meta
+          property="og:description"
+          content={pageMeta.description}
+        />
+        <meta
+          property="og:url"
+          content={pageMeta.canonicalUrl}
+        />
+        <meta
+          property="og:image"
+          content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/og`}
         />
       </Head>
       {posts.map((post, index) => (
@@ -39,6 +76,12 @@ export default function Posts({ posts }: Props) {
 }
 
 export const getStaticProps = async () => {
+  const pageMeta = {
+    'title': 'Blog',
+    'description': 'This is my blog where I try to share my experiences on all interesting topics.',
+    'canonicalUrl': ''
+  }
+
   const posts = getAllPosts([
     'slug',
     'title',
@@ -51,6 +94,6 @@ export const getStaticProps = async () => {
   ])
 
   return {
-    props: { posts }
+    props: { pageMeta, posts }
   }
 }

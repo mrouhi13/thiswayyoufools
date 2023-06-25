@@ -28,10 +28,10 @@ export default function Post({ post }: Props) {
           name="description"
           content={post.metaDescription}
         />
-        {/*<meta*/}
-        {/*  property="og:image"*/}
-        {/*  content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/og/?title=${post.title}&author=${post.author.name}`}*/}
-        {/*/>*/}
+        <meta
+          property="og:image"
+          content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/og/?title=${post.title}&author=${post.author.name}`}
+        />
       </Head>
       <Layout
         pageTitle={router.isFallback ? 'Loading...' : post.title}

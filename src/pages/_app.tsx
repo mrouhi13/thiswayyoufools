@@ -15,12 +15,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link
           rel="icon"
           type="image/svg+xml"
-          href="/assets/favicon/favicon.svg"
+          href="/favicon.svg"
         />
         <link
           rel="icon"
           type="image/png"
-          href="/assets/favicon/favicon.png"
+          href="/favicon.png"
         />
       </Head>
       <Component {...pageProps} />

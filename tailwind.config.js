@@ -20,7 +20,8 @@ module.exports = {
         112: '28rem'
       },
       fontFamily: {
-        serif: ['Cormorant\\ Infant', 'serif']
+        serif: ['Forum', 'serif'],
+        mono: ['JetBrains\\ Mono', 'monospace']
       },
       letterSpacing: {
         tighter: '-.04em'

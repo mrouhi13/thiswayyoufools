@@ -8,7 +8,6 @@ type Props = {
   pageMeta: {
     title: string
     description: string
-    canonicalUrl?: string
   }
   posts: IPost[]
 }
@@ -27,7 +26,7 @@ export default function Posts({ pageMeta, posts }: Props) {
         />
         <link
           rel="canonical"
-          content={pageMeta.canonicalUrl}
+          content={{process.env.NEXT_PUBLIC_WEBSITE_URL}}
         />
         <meta
           property="twitter:title"
@@ -55,7 +54,7 @@ export default function Posts({ pageMeta, posts }: Props) {
         />
         <meta
           property="og:url"
-          content={pageMeta.canonicalUrl}
+          content={process.env.NEXT_PUBLIC_WEBSITE_URL}
         />
         <meta
           property="og:image"
@@ -83,7 +82,6 @@ export const getStaticProps = async () => {
   const pageMeta = {
     'title': 'Blog',
     'description': 'This is my blog where I try to share my experiences on all interesting topics.',
-    'canonicalUrl': `https://${process.env.NEXT_PUBLIC_WEBSITE_URL}`
   }
 
   const posts = getAllPosts([

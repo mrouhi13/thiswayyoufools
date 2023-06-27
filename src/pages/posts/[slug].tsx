@@ -30,7 +30,7 @@ export default function Post({ post }: Props) {
         />
         <link
           rel="canonical"
-          content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${post.slug}`}
+          content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/posts/${post.slug}`}
         />
         <meta
           property="twitter:title"
@@ -58,7 +58,7 @@ export default function Post({ post }: Props) {
         />
         <meta
           property="og:url"
-          content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/${post.slug}`}
+          content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/posts/${post.slug}`}
         />
         <meta
           property="og:image"

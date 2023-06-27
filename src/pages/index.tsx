@@ -26,7 +26,7 @@ export default function Posts({ pageMeta, posts }: Props) {
         />
         <link
           rel="canonical"
-          content={{process.env.NEXT_PUBLIC_WEBSITE_URL}}
+          content={process.env.NEXT_PUBLIC_WEBSITE_URL}
         />
         <meta
           property="twitter:title"

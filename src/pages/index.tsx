@@ -25,6 +25,10 @@ export default function Posts({ pageMeta, posts }: Props) {
           name="description"
           content={pageMeta.description}
         />
+        <link
+          rel="canonical"
+          content={pageMeta.canonicalUrl}
+        />
         <meta
           property="twitter:title"
           content={pageMeta.title}
@@ -79,7 +83,7 @@ export const getStaticProps = async () => {
   const pageMeta = {
     'title': 'Blog',
     'description': 'This is my blog where I try to share my experiences on all interesting topics.',
-    'canonicalUrl': ''
+    'canonicalUrl': `https://${process.env.NEXT_PUBLIC_WEBSITE_URL}`
   }
 
   const posts = getAllPosts([

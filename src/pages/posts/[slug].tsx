@@ -28,6 +28,10 @@ export default function Post({ post }: Props) {
           name="description"
           content={post.metaDescription}
         />
+        <link
+          rel="canonical"
+          content={`https://${process.env.NEXT_PUBLIC_WEBSITE_URL}/${post.slug}`}
+        />
         <meta
           property="twitter:title"
           content={post.title}
@@ -54,7 +58,7 @@ export default function Post({ post }: Props) {
         />
         <meta
           property="og:url"
-          content={post.canonicalUrl}
+          content={`https://${process.env.NEXT_PUBLIC_WEBSITE_URL}/${post.slug}`}
         />
         <meta
           property="og:image"
@@ -101,7 +105,6 @@ export async function getStaticProps({ params }: Params) {
     'content',
     'author',
     'coverImage',
-    'canonicalUrl'
   ])
   const content = await markdownToHtml(post.content || '')
 

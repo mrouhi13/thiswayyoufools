@@ -15,7 +15,6 @@ readingTime: '2 Minutes'
 author:
   name: 'Majid.'
   picture: ''
-canonicalUrl: ''
 ---
 
 Introduction

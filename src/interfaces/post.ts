@@ -18,5 +18,4 @@ export interface IPostPreview {
 export interface IPost extends IPostPreview {
   metaDescription: string
   content: string
-  canonicalUrl?: string
 }

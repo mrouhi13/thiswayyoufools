@@ -1,7 +1,7 @@
-import PostBody from '@/components/post-body'
-import CoverImage from '@/components/cover-image'
-import PostTitle from '@/components/post-title'
-import PostMeta from '@/components/post-meta'
+import PostCover from '@/app/components/post-cover'
+import PostBody from '@/app/components/post-body'
+import PostMeta from '@/app/components/post-meta'
+import PostTitle from '@/app/components/post-title'
 import { IPostPreview } from '@/interfaces'
 
 type Props = IPostPreview
@@ -18,21 +18,9 @@ export default function PostPreview({
                                     }: Props) {
   return (
     <article>
-      <CoverImage
-        slug={slug}
-        title={title}
-        src={coverImage.file}
-        priority={priority}
-      />
-      <PostMeta
-        date={date}
-        author={author}
-        readingTime={readingTime}
-      />
-      <PostTitle
-        slug={slug}
-        title={title}
-      />
+      <PostCover slug={slug} title={title} src={coverImage.file} priority={priority}/>
+      <PostMeta date={date} author={author} readingTime={readingTime}/>
+      <PostTitle slug={slug} title={title}/>
       <PostBody content={excerpt}/>
     </article>
   )

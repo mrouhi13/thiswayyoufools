@@ -8,7 +8,7 @@ type Props = {
   priority?: boolean
 }
 
-export default function CoverImage({ title, src, slug, priority }: Props) {
+export default function PostCover({ title, src, slug, priority }: Props) {
   const image = (
     <Image
       src={src}
@@ -24,15 +24,10 @@ export default function CoverImage({ title, src, slug, priority }: Props) {
   return (
     <div className="mx-2 mt-10 mb-5">
       {slug ? (
-        <Link
-          as={`/posts/${slug}`}
-          href="/posts/[slug]"
-          aria-label={title}
-        >{image}
+        <Link as={`/posts/${slug}`} href="/posts/[slug]" aria-label={title}>
+          {image}
         </Link>
-      ) : (
-        image
-      )}
+      ) : (image)}
     </div>
   )
 }

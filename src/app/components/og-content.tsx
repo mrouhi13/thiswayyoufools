@@ -1,6 +1,4 @@
-import React from 'react'
-import Logo from '@/components/logo'
-
+import Logo from '@/app/components/logo'
 
 type Props = {
   title: string
@@ -59,19 +57,18 @@ export default function Content({ title, author }: Props) {
       </div>
       <div
         style={{
-
           position: 'absolute',
           display: 'flex',
           alignItems: 'center'
         }}
       >
-      <span
-        style={{
-          width: 24,
-          height: 24,
-          background: 'black'
-        }}
-      />
+        <span
+          style={{
+            width: 24,
+            height: 24,
+            background: 'black'
+          }}
+        />
         <span
           style={{
             fontSize: '18px',
@@ -80,8 +77,8 @@ export default function Content({ title, author }: Props) {
             marginLeft: '10px'
           }}
         >
-        {process.env.NEXT_PUBLIC_WEBSITE_URL}
-      </span>
+          {process.env.NEXT_PUBLIC_WEBSITE_URL}
+        </span>
       </div>
     </div>
   )

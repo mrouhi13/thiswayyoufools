@@ -1,13 +1,14 @@
-import Head from 'next/head'
-import ErrorPage from 'next/error'
-import { useRouter } from 'next/router'
-import Layout from '@/components/layout'
-import PostBody from '@/components/post-body'
-import PostMeta from '@/components/post-meta'
-import CoverImage from '@/components/cover-image'
-import markdownToHtml from '@/lib/markdownToHtml'
-import { getAllPosts, getPostBySlug } from '@/lib/api'
+import PageTitle from '@/app/components/page-title'
+import PostCover from '@/app/components/post-cover'
+import PostBody from '@/app/components/post-body'
+import PostMeta from '@/app/components/post-meta'
 import { IPost } from '@/interfaces'
+import { getAllPosts, getPostBySlug } from '@/lib/api'
+import markdownToHtml from '@/lib/markdownToHtml'
+import ErrorPage from 'next/error'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import React from 'react'
 
 type Props = {
   post: IPost
@@ -65,26 +66,22 @@ export default function Post({ post }: Props) {
           content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/og/?title=${post.title}&author=${post.author.name}`}
         />
       </Head>
-      <Layout
-        pageTitle={router.isFallback ? 'Loading...' : post.title}
-        showBack={true}
-      >
-        {!router.isFallback ? (
-          <article>
-            <CoverImage
-              title={post.title}
-              src={post.coverImage.file}
-              priority={true}
-            />
-            <PostMeta
-              date={post.date}
-              author={post.author}
-              readingTime={post.readingTime}
-            />
-            <PostBody content={post.content}/>
-          </article>
-        ) : null}
-      </Layout>
+      <PageTitle title={router.isFallback ? 'Loading...' : post.title} showBack={true}/>
+      {!router.isFallback ? (
+        <article>
+          <PostCover
+            title={post.title}
+            src={post.coverImage.file}
+            priority={true}
+          />
+          <PostMeta
+            date={post.date}
+            author={post.author}
+            readingTime={post.readingTime}
+          />
+          <PostBody content={post.content}/>
+        </article>
+      ) : null}
     </>
   )
 }
@@ -104,7 +101,7 @@ export async function getStaticProps({ params }: Params) {
     'readingTime',
     'content',
     'author',
-    'coverImage',
+    'coverImage'
   ])
   const content = await markdownToHtml(post.content || '')
 

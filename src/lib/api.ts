@@ -1,40 +1,37 @@
+import { IPost } from '@/interfaces'
 import fs from 'fs'
-import { join } from 'path'
 import matter from 'gray-matter'
+import { join } from 'path'
 
 const postsDirectory = join(process.cwd(), 'src/_posts')
 
-export function getPostSlugs() {
+export function getPostSlugs(): string[] {
   return fs.readdirSync(postsDirectory)
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+export function getPostBySlug(slug: string, fields: string[] = []): IPost {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
-  type Items = {
-    [key: string]: string
-  }
-
-  const items: Items = {}
+  const post = {} as IPost & Record<string, any>
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === 'slug') {
-      items[field] = realSlug
+      post[field] = realSlug
     } else if (field === 'content') {
-      items[field] = content
+      post[field] = content
     } else if (data[field]) {
-      items[field] = data[field]
+      post[field] = data[field]
     }
   })
 
-  return items
+  return post
 }
 
-export function getAllPosts(fields: string[] = []) {
+export function getAllPosts(fields: string[] = []): IPost[] {
   const slugs = getPostSlugs()
   return slugs
     .map((slug) => getPostBySlug(slug, fields))
